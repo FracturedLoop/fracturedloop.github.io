@@ -1,13 +1,4 @@
-# gatsby-starter-default
-The default Gatsby starter
+# fracturedloop.github.io
+This is my personal website/blog. Feel free to have a look around, and make an issue if you see something odd :)
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
-
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Special thanks to [Dustin Schau](https://www.dustinschau.com) for his tutorial on creating a blog with Gatsby.
