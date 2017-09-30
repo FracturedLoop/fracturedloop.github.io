@@ -46,7 +46,8 @@ export default function Index({data}) {
                 style={{
                   fontSize: '90%',
                   color: '#505050',
-                  marginTop: '-5px'
+                  marginTop: '-5px',
+                  fontWeight: 500
                 }}
               >
                 {post.excerpt}
