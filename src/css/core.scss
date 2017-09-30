@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Milkshake';
+  src: url('../assets/Milkshake.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, a {
+  font-family: 'Raleway';
+}

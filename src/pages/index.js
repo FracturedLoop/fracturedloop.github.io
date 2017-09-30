@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import Sass from 'gatsby-plugin-sass'
 
-// import '../css/index.css'; // add some style if you want!
+import '../css/core.scss'; // add some style if you want!
 
 export default function Index({data}) {
   const {edges: posts} = data.allMarkdownRemark;
@@ -12,19 +13,46 @@ export default function Index({data}) {
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({node: post}) => {
           return (
+            <Link
+              to={post.frontmatter.path}
+              style={{
+                textDecoration: 'none',
+                fontFamily: 'Raleway',
+              }}  
+            >
             <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>
+              <h1
+                style={{
+                  display: 'block',
+                  
+                  fontWeight: '600',
+                  lineHeight: '100%',
+                  fontSize: '130%',
+                  color: '#464646'
+                }}
+              >
                   {post.frontmatter.title}
-                </Link>
               </h1>
-              <h2>
+              <h2
+                style={{
+                  fontSize: '70%',
+                  color: '#505050',
+                  marginTop: '-10px'
+                }}
+              >
                 {post.frontmatter.date}
               </h2>
-              <p>
+              <p
+                style={{
+                  fontSize: '90%',
+                  color: '#505050',
+                  marginTop: '-5px'
+                }}
+              >
                 {post.excerpt}
               </p>
             </div>
+            </Link>
           );
        })}
     </div>
