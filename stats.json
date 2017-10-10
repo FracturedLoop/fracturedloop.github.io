@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-d1d7ac348f402b6de8b2.js",
-      "component---src-pages-index-js-d1d7ac348f402b6de8b2.js.map"
+      "component---src-pages-index-js-a9b47f35cce1a70425ce.js",
+      "component---src-pages-index-js-a9b47f35cce1a70425ce.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -13,20 +13,16 @@
       "component---src-pages-contact-js-ef2ef213fe365b0d4253.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-4f4e6c43cd5b7f494e33.js",
-      "component---src-templates-blog-post-js-4f4e6c43cd5b7f494e33.js.map"
+      "component---src-templates-blog-post-js-03560d10e86c0040f8e2.js",
+      "component---src-templates-blog-post-js-03560d10e86c0040f8e2.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-258a5438e12c1e90e971.js",
-      "component---src-layouts-index-js-258a5438e12c1e90e971.js.map"
+      "component---src-layouts-index-js-677cf2831e44fdb7af5b.js",
+      "component---src-layouts-index-js-677cf2831e44fdb7af5b.js.map"
     ],
     "path---index": [
-      "path---index-1bf8025f9d5bfc303b66.js",
-      "path---index-1bf8025f9d5bfc303b66.js.map"
-    ],
-    "path---hello-world": [
-      "path---hello-world-bd0685f56f4eb9008912.js",
-      "path---hello-world-bd0685f56f4eb9008912.js.map"
+      "path---index-ffd6dcac66a9b176a8b7.js",
+      "path---index-ffd6dcac66a9b176a8b7.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -49,8 +45,8 @@
       "path---best-free-download-manager-for-mac-19f68d9c36fca5827ac6.js.map"
     ],
     "app": [
-      "app-a1b304cbfd8fc35f7382.js",
-      "app-a1b304cbfd8fc35f7382.js.map"
+      "app-908c088b7bdde0b9f813.js",
+      "app-908c088b7bdde0b9f813.js.map"
     ],
     "path---download-github-files-with-curl-or-wget": [
       "path---download-github-files-with-curl-or-wget-8414dd2ca0ff514acfd8.js",
@@ -63,10 +59,6 @@
     "component---src-pages-about-js": [
       "component---src-pages-about-js-551edaa23f716a4052d0.js",
       "component---src-pages-about-js-551edaa23f716a4052d0.js.map"
-    ],
-    "path---hello-world-2": [
-      "path---hello-world-2-bef9ae768c4e8c7bd70c.js",
-      "path---hello-world-2-bef9ae768c4e8c7bd70c.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
