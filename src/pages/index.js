@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import Sass from 'gatsby-plugin-sass'
+import Sass from 'gatsby-plugin-sass';
 
 import '../css/core.scss'; // add some style if you want!
 
@@ -10,52 +10,27 @@ export default function Index({data}) {
   return (
     <div className="blog-posts">
       {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
+        .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({node: post}) => {
           return (
             <Link
               to={post.frontmatter.path}
               style={{
                 textDecoration: 'none',
-                fontFamily: 'Raleway',
-              }}  
+              }}
             >
-            <div className="blog-post-preview" key={post.id}>
-              <h1
-                style={{
-                  display: 'block',
-                  
-                  fontWeight: '600',
-                  lineHeight: '100%',
-                  fontSize: '130%',
-                  color: '#464646'
-                }}
-              >
+              <div className="blog-post-preview" key={post.id}>
+                <h1 className={'blog-post-preview-title'}>
                   {post.frontmatter.title}
-              </h1>
-              <h2
-                style={{
-                  fontSize: '70%',
-                  color: '#505050',
-                  marginTop: '-10px'
-                }}
-              >
-                {post.frontmatter.date}
-              </h2>
-              <p
-                style={{
-                  fontSize: '90%',
-                  color: '#505050',
-                  marginTop: '-5px',
-                  fontWeight: 400
-                }}
-              >
-                {post.excerpt}
-              </p>
-            </div>
+                </h1>
+                <h2 className={'blog-post-preview-date'}>
+                  {post.frontmatter.date}
+                </h2>
+                <p className={'blog-post-preview-excerpt'}>{post.excerpt}</p>
+              </div>
             </Link>
           );
-       })}
+        })}
     </div>
   );
 }
@@ -71,9 +46,9 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
-         }
-       }
-     }
-   }
- }
+          }
+        }
+      }
+    }
+  }
 `;
