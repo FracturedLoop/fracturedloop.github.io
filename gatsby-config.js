@@ -3,21 +3,28 @@ module.exports = {
     title: `Gatsby Default Starter`,
   },
   plugins: [
-  'gatsby-plugin-catch-links',
-  'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sass',
-  {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          path: `${__dirname}/src/pages`,
-          name: 'pages',
-        },
-      },
-      {
-      resolve: 'gatsby-transformer-remark',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        plugins: [],
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
-    ],
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+            },
+          },
+        ],
+      },
+    },
+  ],
 };

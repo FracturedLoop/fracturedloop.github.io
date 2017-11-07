@@ -2,9 +2,18 @@ $page-small: 320px;
 $page-mid: 520px;
 $page-large: 960px;
 
+$text-color: #404040;
+
 @font-face {
   font-family: 'Milkshake';
   src: url('../assets/Milkshake.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FiraCode';
+  src: url('../assets/FiraCode.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -72,8 +81,8 @@ h1 {
 p,
 div,
 a {
-  font-size: 0.9rem;
-  color: #505050;
+  font-size: 0.8rem;
+  color: #404040;
 }
 
 /*****
@@ -83,7 +92,6 @@ a {
 *****/
 
 .header-container {
-  margin-bottom: -1 rem;
   text-align: center;
   margin: 0 auto;
   padding: 0.5rem 1.0875rem;
@@ -131,8 +139,8 @@ a {
   display: flex;
   font-size: 70%;
   text-align: center;
-  margin: auto;
-  max-width: 960px;
+  margin: 0.5rem auto;
+  max-width: 768px;
 }
 
 .nav-btn {
@@ -146,7 +154,11 @@ a {
   Page Stuff
 
 *****/
+.blog-post-preview {
+  margin-bottom: 2rem;
+}
 
+.blog-post-title,
 .blog-post-preview-title {
   display: block;
   font-weight: 600;
@@ -155,15 +167,75 @@ a {
   color: #464646;
 }
 
+.blog-post-date,
 .blog-post-preview-date {
   font-size: 0.6rem;
-  color: #505050;
+  color: #404040;
   margin-top: -10px;
 }
 
+.blog-post-content,
 .blog-post-preview-excerpt {
-  font-size: 0.9rem;
-  color: #505050;
+  font-size: 0.8rem;
+  color: #404040;
   margin-top: -5px;
   font-weight: 400;
+}
+
+.blog-post-content {
+  margin-top: -0.7rem;
+}
+
+/***********
+*
+* Syntax Highlighting
+*
+***********/
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: #ececec;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ */
+.gatsby-highlight pre[class*='language-'] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight-code-line {
+  background-color: #e2e2e2;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #a0a0a0;
+}
+
+.token.operator {
+  background: initial !important;
+}
+
+code {
+  font-family: 'FiraCode';
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 0.1em 0.2em;
 }

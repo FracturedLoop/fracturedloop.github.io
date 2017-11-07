@@ -1,3 +1,6 @@
+// layouts/index.js
+require('prismjs/themes/prism.css');
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
@@ -47,7 +50,7 @@ const TemplateWrapper = ({children}) => (
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
+        maxWidth: 768,
         padding: '0px 1.0875rem 1.45rem',
         paddingTop: 0,
       }}
