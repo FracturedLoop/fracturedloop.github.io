@@ -12,17 +12,21 @@
       "component---src-pages-contact-js-ef2ef213fe365b0d4253.js",
       "component---src-pages-contact-js-ef2ef213fe365b0d4253.js.map"
     ],
+    "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen": [
+      "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen-07506b3b1ceba8909ae4.js",
+      "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen-07506b3b1ceba8909ae4.js.map"
+    ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-03560d10e86c0040f8e2.js",
-      "component---src-templates-blog-post-js-03560d10e86c0040f8e2.js.map"
+      "component---src-templates-blog-post-js-34b8fed6b887843c51f5.js",
+      "component---src-templates-blog-post-js-34b8fed6b887843c51f5.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-677cf2831e44fdb7af5b.js",
-      "component---src-layouts-index-js-677cf2831e44fdb7af5b.js.map"
+      "component---src-layouts-index-js-877e641d31fb196b37db.js",
+      "component---src-layouts-index-js-877e641d31fb196b37db.js.map"
     ],
     "path---index": [
-      "path---index-ffd6dcac66a9b176a8b7.js",
-      "path---index-ffd6dcac66a9b176a8b7.js.map"
+      "path---index-e030664a8e89bc422af3.js",
+      "path---index-e030664a8e89bc422af3.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -41,16 +45,14 @@
       "path---contact-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---best-free-download-manager-for-mac": [
-      "path---best-free-download-manager-for-mac-19f68d9c36fca5827ac6.js",
-      "path---best-free-download-manager-for-mac-19f68d9c36fca5827ac6.js.map"
+      "path---best-free-download-manager-for-mac-fc2636d19cf2924cb528.js",
+      "path---best-free-download-manager-for-mac-fc2636d19cf2924cb528.js.map"
     ],
     "app": [
-      "app-908c088b7bdde0b9f813.js",
-      "app-908c088b7bdde0b9f813.js.map"
-    ],
-    "path---download-github-files-with-curl-or-wget": [
-      "path---download-github-files-with-curl-or-wget-8414dd2ca0ff514acfd8.js",
-      "path---download-github-files-with-curl-or-wget-8414dd2ca0ff514acfd8.js.map"
+      "app-de6214b89a3915716b88.js",
+      "build-js-styles.css",
+      "app-de6214b89a3915716b88.js.map",
+      "build-js-styles.css.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
