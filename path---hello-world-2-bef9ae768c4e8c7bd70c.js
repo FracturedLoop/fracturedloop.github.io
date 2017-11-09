@@ -1,2 +1,0 @@
-webpackJsonp([0xf84ec271f6bc],{"./node_modules/json-loader/index.js!./.cache/json/hello-world-2.json":function(o,e){o.exports={data:{markdownRemark:{html:"<p>Hey look!, there's two posts now!</p>",frontmatter:{date:"September 17, 2017",path:"/hello-world-2",title:"Second Post"}}},pathContext:{}}}});
-//# sourceMappingURL=path---hello-world-2-bef9ae768c4e8c7bd70c.js.map
