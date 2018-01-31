@@ -1,11 +1,11 @@
 ---
-path: '/so-you-want-to-learn-programming'
-date: "2017-11-06T20:23:14Z"
 title: "So you want to learn programming (and other things), eh?"
+path: '/so-you-want-to-learn-programming'
+date: "2017-12-14T20:23:14Z"
 ---
 
 I was wondering recently, if I could tell my younger self anything, what would
-that be? As you can assume, the list was quite large, but that got me
+that be? As you can guess, the list was quite large, but that got me
 thinking... As far as programming, what would I tell myself? And that, my
 friend, is what I have here, in no particular order.
 
@@ -44,8 +44,7 @@ friend, is what I have here, in no particular order.
   it is worthwhile. There are _plenty_ of instances where I look back and wish I
   had actually learned something instead of just "learning" enough to pass a
   test. There are also those things that you _had_ to study (parents made you?).
-  One for me is definitely music. I wish now I had taken the time to learn. I
-  had plenty of opportunities, but I never made it a priority.
+  Do yourself a favor and be willing to learn at every opportunity, even if you will probably never use it (**Spoiler Alert**: At some point, you'll probably need to use it.)
 
 * Maybe this should fall under the last one as well. When you are studying
   something, don't study it to use it, rather, study it to learn it. _All_ the
