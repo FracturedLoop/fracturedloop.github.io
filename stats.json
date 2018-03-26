@@ -5,8 +5,8 @@
       "path---so-you-want-to-learn-programming-c50e322449fd611b3814.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-48cb51e195948bdb0da6.js",
-      "component---src-pages-index-js-48cb51e195948bdb0da6.js.map"
+      "component---src-pages-index-js-17f7b99f88193a7c0615.js",
+      "component---src-pages-index-js-17f7b99f88193a7c0615.js.map"
     ],
     "path---routing-traffic-per-domain-peplink-router": [
       "path---routing-traffic-per-domain-peplink-router-d1cf2e1d48d7e949e153.js",
@@ -32,17 +32,21 @@
       "component---src-layouts-index-js-fb696310b9023dffd914.js",
       "component---src-layouts-index-js-fb696310b9023dffd914.js.map"
     ],
+    "path---graphql-why": [
+      "path---graphql-why-c6eaed8d436e60853787.js",
+      "path---graphql-why-c6eaed8d436e60853787.js.map"
+    ],
     "path---index": [
-      "path---index-ea653c2fbfd7802b0be4.js",
-      "path---index-ea653c2fbfd7802b0be4.js.map"
+      "path---index-391185ddf42f324bac62.js",
+      "path---index-391185ddf42f324bac62.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-c5c852fc7d2d849261f7.js",
       "component---src-pages-404-js-c5c852fc7d2d849261f7.js.map"
     ],
     "commons": [
-      "commons-822eb725fb81be125c01.js",
-      "commons-822eb725fb81be125c01.js.map"
+      "commons-912c08b8ac4f461490f4.js",
+      "commons-912c08b8ac4f461490f4.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -57,13 +61,13 @@
       "path---if-you-are-worrying-about-unknows-are-you-really-in-love-with-god-0a5641e518ab206f3e43.js.map"
     ],
     "path---best-free-download-manager-for-mac": [
-      "path---best-free-download-manager-for-mac-fc2636d19cf2924cb528.js",
-      "path---best-free-download-manager-for-mac-fc2636d19cf2924cb528.js.map"
+      "path---best-free-download-manager-for-mac-7e8fb7244b755111f954.js",
+      "path---best-free-download-manager-for-mac-7e8fb7244b755111f954.js.map"
     ],
     "app": [
-      "app-2542e2eb1f4ebd60d051.js",
+      "app-08b771387541b44827e5.js",
       "build-js-styles.css",
-      "app-2542e2eb1f4ebd60d051.js.map",
+      "app-08b771387541b44827e5.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
