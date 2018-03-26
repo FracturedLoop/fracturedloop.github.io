@@ -11,28 +11,28 @@ import '../css/core.scss';
 
 const Header = () => (
   <div>
-    <div className={'header-container'}>
-      <Link to="/" className={'header-blog-name'}>
+    <div className="header-container">
+      <Link to="/" className="header-blog-name">
         Josiah Nunemaker
-        <span className={'header-subtitle'}>Blog</span>
-        <div className={'header-underline'} />
+        <span className="header-subtitle">Blog</span>
+        <div className="header-underline" />
       </Link>
     </div>
-    <div className={'nav-container'}>
-      <Link className={'nav-btn'} to="/">
+    <div className="nav-container">
+      <Link className="nav-btn" to="/">
         Home
       </Link>
-      <Link className={'nav-btn'} to="/about">
+      <Link className="nav-btn" to="/about">
         About
       </Link>
-      <Link className={'nav-btn'} to="/contact">
+      <Link className="nav-btn" to="/contact">
         Contact
       </Link>
     </div>
   </div>
 );
 
-const TemplateWrapper = ({children}) => (
+const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title="Josiah's Blog"
@@ -42,7 +42,7 @@ const TemplateWrapper = ({children}) => (
           content:
             'A blog and how-to on tech, web development, and all things computers.',
         },
-        {name: 'keywords', content: 'web development, blog'},
+        { name: 'keywords', content: 'web development, blog' },
       ]}
     >
       <link

@@ -5,37 +5,35 @@ import Sass from 'gatsby-plugin-sass';
 
 import '../css/core.scss'; // add some style if you want!
 
-export default function Index({data}) {
-  const {edges: posts} = data.allMarkdownRemark;
+export default function Index({ data }) {
+  const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
       {posts
         .filter(
-          (post) =>
+          post =>
             post.node.frontmatter.title.length > 0 &&
             !post.node.frontmatter.unpublished
         )
-        .map(({node: post}) => {
-          return (
-            <Link
-              to={post.frontmatter.path}
-              style={{
-                textDecoration: 'none',
-              }}
-              key={post.id}
-            >
-              <div className="blog-post-preview" key={post.id}>
-                <h1 className={'blog-post-preview-title'}>
-                  {post.frontmatter.title}
-                </h1>
-                <h2 className={'blog-post-preview-date'}>
-                  {post.frontmatter.date}
-                </h2>
-                <p className={'blog-post-preview-excerpt'}>{post.excerpt}</p>
-              </div>
-            </Link>
-          );
-        })}
+        .map(({ node: post }) => (
+          <Link
+            to={post.frontmatter.path}
+            style={{
+              textDecoration: 'none',
+            }}
+            key={post.id}
+          >
+            <div className="blog-post-preview" key={post.id}>
+              <h1 className="blog-post-preview-title">
+                {post.frontmatter.title}
+              </h1>
+              <h2 className="blog-post-preview-date">
+                {post.frontmatter.date}
+              </h2>
+              <p className="blog-post-preview-excerpt">{post.excerpt}</p>
+            </div>
+          </Link>
+        ))}
     </div>
   );
 }

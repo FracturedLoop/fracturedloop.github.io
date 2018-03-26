@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
-  const {markdownRemark: post} = data; // data.markdownRemark holds our post data
+  const { markdownRemark: post } = data; // data.markdownRemark holds our post data
   return (
     <div className="blog-post-container">
       <Helmet title={`Josiah's Blog - ${post.frontmatter.title}`} />
@@ -16,7 +16,7 @@ export default function Template({
         <br />
         <div
           className="blog-post-content"
-          dangerouslySetInnerHTML={{__html: post.html}}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
     </div>
@@ -25,7 +25,7 @@ export default function Template({
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: {path: {eq: $path}}) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

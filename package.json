@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "josiah-nunemakers-website",
+  "description": "The website, blog, and portfolio for Josiah Nunemaker",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Josiah Nunemaker <josiah.nunemaker@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.17",
     "gatsby-link": "^1.6.15",
+    "gatsby-plugin-catch-links": "^1.0.19",
     "gatsby-plugin-google-analytics": "^1.0.12",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.13",
@@ -24,7 +25,6 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "gatsby build && gh-pages -d public --branch master"
   },
   "devDependencies": {
