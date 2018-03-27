@@ -46,6 +46,7 @@ $text-color: #404040;
 
 html {
   @include fluid-type(360px, 1200px, 16px, 24px);
+  line-height: 1.4em;
 }
 
 body {
