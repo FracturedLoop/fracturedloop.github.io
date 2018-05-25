@@ -1,13 +1,12 @@
 // layouts/index.js
-require('prismjs/themes/prism.css');
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import Sass from 'gatsby-plugin-sass';
 
 import '../css/core.scss';
+
+require('prismjs/themes/prism.css');
 
 const Header = () => (
   <div>

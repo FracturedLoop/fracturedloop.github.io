@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
 
 import '../css/core.scss'; // add some style if you want!
 
@@ -50,7 +49,7 @@ class PostTags extends Component {
 
   render() {
     return (
-      <div className={this.state.isOpen ? 'post-tags' : 'post-tags open'}>
+      <div className={this.state.isOpen ? 'post-tags open' : 'post-tags'}>
         <ul>{postTagsList(this.props.tags)}</ul>
         <div className="handle" onClick={this.toggleOpen}>
           <h4 style={{ margin: 0, cursor: 'pointer' }}>Tags</h4>

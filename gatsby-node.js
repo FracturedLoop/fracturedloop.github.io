@@ -1,10 +1,10 @@
 const path = require('path');
 
+const blogPostTemplate = path.resolve(`src/templates/blog-post.jsx`);
+const tagTemplate = path.resolve(`src/templates/tag.jsx`);
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
-
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-  const tagTemplate = path.resolve(`src/templates/tag.js`);
 
   return graphql(`
     {
@@ -60,5 +60,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         },
       });
     });
+    return true;
   });
 };
