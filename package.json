@@ -4,17 +4,19 @@
   "version": "1.0.0",
   "author": "Josiah Nunemaker <josiah.nunemaker@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.241",
-    "gatsby-link": "^1.6.39",
-    "gatsby-plugin-catch-links": "^1.0.19",
-    "gatsby-plugin-google-analytics": "^1.0.24",
+    "gatsby": "^1.9.261",
+    "gatsby-link": "^1.6.44",
+    "gatsby-plugin-catch-links": "^1.0.22",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-plugin-sass": "^1.0.24",
-    "gatsby-plugin-sharp": "^1.6.41",
-    "gatsby-remark-images": "^1.5.59",
-    "gatsby-remark-prismjs": "^1.2.21",
-    "gatsby-source-filesystem": "^1.5.27",
-    "gatsby-transformer-remark": "^1.7.37"
+    "gatsby-plugin-sass": "^1.0.26",
+    "gatsby-plugin-sharp": "^1.6.44",
+    "gatsby-remark-images": "^1.5.63",
+    "gatsby-remark-prismjs": "^1.2.24",
+    "gatsby-source-filesystem": "^1.5.36",
+    "gatsby-transformer-remark": "^1.7.41",
+    "react": "^16.4.0",
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby"
@@ -24,11 +26,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "publish": "gatsby build && gh-pages -d public --branch master"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0",
-    "prettier": "^1.11.1"
+    "gh-pages": "^1.1.0"
   }
 }

@@ -175,6 +175,11 @@ a {
   margin-top: -10px;
 }
 
+.blog-post-tags {
+  float: right;
+  font-weight: 500;
+}
+
 .blog-post-content,
 .blog-post-preview-excerpt {
   font-size: 0.8rem;
@@ -186,6 +191,62 @@ a {
 .blog-post-content {
   margin-top: -0.7rem;
 }
+
+.post-tags {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+  padding: 10px;
+  
+  background-color: #fff;
+  border: 2px solid #212121;
+  border-width: 2px 2px 2px 0;
+  transition-duration: 0.3s;
+  
+  transform: translate(-100%);
+  
+  
+  &.open {
+    transform: translate(0);
+  }
+  
+  & > ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: initial;
+  }
+  
+  & > ul > a {
+    display: block;
+    
+    padding: 5px;
+    
+    transform: translate(0);
+    transition-duration: 0.3s;
+    
+    &:hover {
+      transform: translate(15%);
+      background-color: #fff;
+    }
+  }
+  
+  .handle {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    
+    margin-left: 10px;
+    padding: 5px;
+    
+    background-color: #fff;
+    border: 2px solid #212121;
+    border-width: 2px 2px 2px 0;
+    
+    transform: translate(100%);
+  }
+}
+
 
 /***********
 *

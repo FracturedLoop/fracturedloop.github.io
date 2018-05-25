@@ -45,6 +45,10 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'web development, blog' },
       ]}
     >
+      <meta
+        name="google-site-verification"
+        content="iTqQGhz5A11iZYYP6fr9lS1lpnduASXddf5sr9tUN78"
+      />
       <link
         href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700|Raleway:400,500,600,800"
         rel="stylesheet"

@@ -4,6 +4,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const tagTemplate = path.resolve(`src/templates/tag.js`);
 
   return graphql(`
     {
@@ -19,6 +20,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             frontmatter {
               date
               path
+              tags
               title
               unpublished
             }
@@ -31,11 +33,31 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node: post }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: post.frontmatter.path,
         component: blogPostTemplate,
         context: {}, // additional data can be passed via context
+      });
+    });
+
+    const tags = [];
+    result.data.allMarkdownRemark.edges.forEach(({ node: post }) => {
+      post.frontmatter.tags.forEach(tag => {
+        if (post.frontmatter.unpublished) return;
+        if (!tags.includes(tag)) {
+          tags.push(tag);
+        }
+      });
+    });
+
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${tag}`,
+        component: tagTemplate,
+        context: {
+          tag,
+        },
       });
     });
   });

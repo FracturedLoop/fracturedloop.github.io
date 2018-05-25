@@ -2,6 +2,9 @@
 title: "GraphQL: Why?"
 path: '/graphql-why'
 date: "2018-03-26T12:23:14Z"
+tags:
+- graphql
+- tutorial
 ---
 
 GraphQL is one of those hot new technologies that is showing a lot of promise,

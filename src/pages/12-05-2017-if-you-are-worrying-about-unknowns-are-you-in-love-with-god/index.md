@@ -3,6 +3,9 @@ title: "If you are worrying about unknowns, are you really in love with God?"
 unpublished: 'true'
 path: '/if-you-are-worrying-about-unknows-are-you-really-in-love-with-god'
 date: "2017-12-05T20:23:14Z"
+tags:
+- faith
+- worry
 ---
 
 A friend of mine recently made a blog post about unknowns. After reading it, it
