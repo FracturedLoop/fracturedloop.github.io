@@ -8,10 +8,6 @@
       "path---so-you-want-to-learn-programming-c50e322449fd611b3814.js",
       "path---so-you-want-to-learn-programming-c50e322449fd611b3814.js.map"
     ],
-    "component---src-pages-index-js": [
-      "component---src-pages-index-js-dfc172ede066c67f69f5.js",
-      "component---src-pages-index-js-dfc172ede066c67f69f5.js.map"
-    ],
     "path---tags-learning": [
       "path---tags-learning-529a73720e6b05103f33.js",
       "path---tags-learning-529a73720e6b05103f33.js.map"
@@ -28,6 +24,10 @@
       "path---routing-traffic-per-domain-peplink-router-8b77668aefbe404020eb.js",
       "path---routing-traffic-per-domain-peplink-router-8b77668aefbe404020eb.js.map"
     ],
+    "component---src-pages-contact-jsx": [
+      "component---src-pages-contact-jsx-ef2ef213fe365b0d4253.js",
+      "component---src-pages-contact-jsx-ef2ef213fe365b0d4253.js.map"
+    ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
@@ -36,25 +36,13 @@
       "path---tags-networking-4f8f4e796a01eb34af4d.js",
       "path---tags-networking-4f8f4e796a01eb34af4d.js.map"
     ],
-    "component---src-pages-contact-js": [
-      "component---src-pages-contact-js-ef2ef213fe365b0d4253.js",
-      "component---src-pages-contact-js-ef2ef213fe365b0d4253.js.map"
+    "component---src-layouts-index-jsx": [
+      "component---src-layouts-index-jsx-8bbffcc760cfeb8a4fb1.js",
+      "component---src-layouts-index-jsx-8bbffcc760cfeb8a4fb1.js.map"
     ],
     "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen": [
       "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen-7327c6b95f10a2c44187.js",
       "path---managing-dotfiles-and-zsh-with-dotbot-and-antigen-7327c6b95f10a2c44187.js.map"
-    ],
-    "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-fee885695ba7a65bf2ad.js",
-      "component---src-templates-blog-post-js-fee885695ba7a65bf2ad.js.map"
-    ],
-    "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-3e7ecda980951593a591.js",
-      "component---src-layouts-index-js-3e7ecda980951593a591.js.map"
-    ],
-    "component---src-templates-tag-js": [
-      "component---src-templates-tag-js-b326b8fe31a54f957f8c.js",
-      "component---src-templates-tag-js-b326b8fe31a54f957f8c.js.map"
     ],
     "path---graphql-why": [
       "path---graphql-why-4ab68473fc326504fd08.js",
@@ -64,9 +52,9 @@
       "path---index-70401bb55301065f7586.js",
       "path---index-70401bb55301065f7586.js.map"
     ],
-    "component---src-pages-404-js": [
-      "component---src-pages-404-js-c5c852fc7d2d849261f7.js",
-      "component---src-pages-404-js-c5c852fc7d2d849261f7.js.map"
+    "component---src-pages-about-jsx": [
+      "component---src-pages-about-jsx-551edaa23f716a4052d0.js",
+      "component---src-pages-about-jsx-551edaa23f716a4052d0.js.map"
     ],
     "commons": [
       "commons-df0ddbe5e5eafefa52cf.js",
@@ -76,13 +64,29 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "component---src-pages-404-jsx": [
+      "component---src-pages-404-jsx-c5c852fc7d2d849261f7.js",
+      "component---src-pages-404-jsx-c5c852fc7d2d849261f7.js.map"
+    ],
+    "component---src-templates-tag-jsx": [
+      "component---src-templates-tag-jsx-b326b8fe31a54f957f8c.js",
+      "component---src-templates-tag-jsx-b326b8fe31a54f957f8c.js.map"
+    ],
     "path---contact": [
       "path---contact-a0e39f21c11f6a62c5ab.js",
       "path---contact-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "component---src-templates-blog-post-jsx": [
+      "component---src-templates-blog-post-jsx-fee885695ba7a65bf2ad.js",
+      "component---src-templates-blog-post-jsx-fee885695ba7a65bf2ad.js.map"
+    ],
     "path---tags-tutorial": [
       "path---tags-tutorial-58fb9c16bcada169a588.js",
       "path---tags-tutorial-58fb9c16bcada169a588.js.map"
+    ],
+    "component---src-pages-index-jsx": [
+      "component---src-pages-index-jsx-dfc172ede066c67f69f5.js",
+      "component---src-pages-index-jsx-dfc172ede066c67f69f5.js.map"
     ],
     "path---if-you-are-worrying-about-unknows-are-you-really-in-love-with-god": [
       "path---if-you-are-worrying-about-unknows-are-you-really-in-love-with-god-0a5641e518ab206f3e43.js",
@@ -97,18 +101,14 @@
       "path---tags-life-65ff11ca280cd78d41bf.js.map"
     ],
     "app": [
-      "app-0285a9e0bb08cad045fb.js",
+      "app-bce693b90c36b9b45184.js",
       "build-js-styles.css",
-      "app-0285a9e0bb08cad045fb.js.map",
+      "app-bce693b90c36b9b45184.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-about-js": [
-      "component---src-pages-about-js-551edaa23f716a4052d0.js",
-      "component---src-pages-about-js-551edaa23f716a4052d0.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
