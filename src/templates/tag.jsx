@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+import TagsList from '../components/TagsList';
 
 const TAG_SEPERATOR = ', ';
 
@@ -14,18 +14,28 @@ const formatPostTags = tags => {
   return newTags.join(TAG_SEPERATOR);
 };
 
-const postTagsList = tags =>
-  tags.map(tag => (
-    <li>
-      <Link to={`/tags/${tag}`}>{tag}</Link>
-    </li>
-  ));
-
 export default function Template({ data }) {
-  const { edges: posts } = data.allMarkdownRemark; // data.markdownRemark holds our post data
+  const { edges: posts } = data.posts; // data.markdownRemark holds our post data
+  const allPostTags = data.tags;
+
+  const tags = [];
+
+  const getAllTags = allPosts => {
+    allPosts.edges.forEach(({ node: post }) => {
+      post.frontmatter.tags.forEach(tag => {
+        if (post.frontmatter.unpublished) return;
+        if (!tags.includes(tag)) {
+          tags.push(tag);
+        }
+      });
+    });
+  };
+
+  getAllTags(allPostTags);
 
   return (
     <div className="blog-posts">
+      <TagsList tags={tags} />
       {posts.map(({ node: post }) => (
         <Link
           to={post.frontmatter.path}
@@ -54,7 +64,7 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query BlogPostByTag($tag: String!) {
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
@@ -67,6 +77,16 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             tags
+          }
+        }
+      }
+    }
+    tags: allMarkdownRemark(filter: { frontmatter: { unpublished: {} } }) {
+      edges {
+        node {
+          frontmatter {
+            tags
+            unpublished
           }
         }
       }
