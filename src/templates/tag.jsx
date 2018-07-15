@@ -11,7 +11,6 @@ const formatPostTags = tags => {
     return 0;
   });
   newTags = newTags.map(el => {
-    console.log(`tag: ${el}`);
     switch (el) {
       case 'css':
         return 'CSS';
