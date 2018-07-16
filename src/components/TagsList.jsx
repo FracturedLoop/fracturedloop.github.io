@@ -10,7 +10,7 @@ const postTagsList = tags =>
       return -1;
     })
     .map(tag => (
-      <Link to={`/tags/${tag}`} key={`tag-${tag}`}>
+      <Link className="left-underline" to={`/tags/${tag}`} key={`tag-${tag}`}>
         {tag}
       </Link>
     ));

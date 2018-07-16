@@ -7,7 +7,7 @@ const AboutPage = () => (
   <div>
     <div className="modern-header">
       <h2>Hey there,</h2>
-      <h1>I’m a full-stack web developer.</h1>
+      <h1>I’m a full stack web developer.</h1>
     </div>
     I tinker with all sorts of things, but my passion is building rich user
     interfaces.
