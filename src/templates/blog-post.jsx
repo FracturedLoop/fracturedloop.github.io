@@ -3,6 +3,8 @@ import Helmet from 'react-helmet';
 
 // import '../css/core.scss'; // make it pretty!
 
+import { formatPostTags } from '../utils/utils';
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
@@ -12,7 +14,12 @@ export default function Template({
       <Helmet title={`Josiah's Blog - ${post.frontmatter.title}`} />
       <div className="blog-post">
         <h1 className="blog-post-title">{post.frontmatter.title}</h1>
-        <h2 className="blog-post-date">{post.frontmatter.date}</h2>
+        <h2 className="blog-post-date">
+          {post.frontmatter.date}
+          <span className="blog-post-tags">
+            {formatPostTags(post.frontmatter.tags)}
+          </span>
+        </h2>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -30,6 +37,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }
