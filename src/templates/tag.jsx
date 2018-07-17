@@ -2,26 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import TagsList from '../components/TagsList';
 
-const TAG_SEPERATOR = ', ';
-
-const formatPostTags = tags => {
-  let newTags = tags.sort((a, b) => {
-    if (a > b) return 1;
-    else if (b > a) return -1;
-    return 0;
-  });
-  newTags = newTags.map(el => {
-    switch (el) {
-      case 'css':
-        return 'CSS';
-      case 'sass':
-        return 'SASS';
-      default:
-        return el.charAt(0).toUpperCase() + el.substring(1);
-    }
-  });
-  return newTags.join(TAG_SEPERATOR);
-};
+import { formatPostTags } from '../utils/utils';
 
 export default function Template({ data }) {
   const { edges: posts } = data.posts; // data.markdownRemark holds our post data
