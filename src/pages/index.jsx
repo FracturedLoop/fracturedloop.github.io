@@ -16,6 +16,8 @@ const formatPostTags = tags => {
     switch (el) {
       case 'css':
         return 'CSS';
+      case 'sass':
+        return 'SASS';
       default:
         return el.charAt(0).toUpperCase() + el.substring(1);
     }
