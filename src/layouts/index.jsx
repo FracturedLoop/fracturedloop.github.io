@@ -13,7 +13,7 @@ import headerLogo from '../assets/header logo.svg';
 const Header = () => (
   <div>
     <div className="header-container">
-      <Link to="/" className="header-blog-name">
+      <Link to="/" className="header-blog-logo">
         <img src={headerLogo} alt="Header" />
       </Link>
     </div>

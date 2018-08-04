@@ -133,20 +133,9 @@ a {
 
 .header-container {
   text-align: center;
-  margin: 0 auto;
-  padding: 0.5rem 1.0875rem;
 }
 
-.header-blog-name {
-  position: relative;
-  color: #464646;
-  font-family: 'Cinzel Decorative';
-  font-size: 1.2rem;
-  @media screen and (min-width: $page-mid) {
-    font-size: 1.5rem;
-  }
-  text-decoration: none;
-  
+.header-blog-logo {
   & > img {
     max-width: 100%;
   }
