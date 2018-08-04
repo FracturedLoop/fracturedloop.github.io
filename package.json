@@ -1,5 +1,5 @@
 {
-  "name": "josiah-nunemakers-website",
+  "name": "josnun.io",
   "description": "The website, blog, and portfolio for Josiah Nunemaker",
   "version": "1.0.0",
   "author": "Josiah Nunemaker <josiah.nunemaker@gmail.com>",
@@ -27,7 +27,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "publish": "gatsby build && gh-pages -d public --branch master"
   },
   "devDependencies": {
