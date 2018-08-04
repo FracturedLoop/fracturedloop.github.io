@@ -146,6 +146,10 @@ a {
     font-size: 1.5rem;
   }
   text-decoration: none;
+  
+  & > img {
+    max-width: 100%;
+  }
 }
 
 .header-subtitle {

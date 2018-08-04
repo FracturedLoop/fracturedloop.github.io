@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
+import 'prismjs/themes/prism.css';
+
 import '../css/core.scss';
 
-require('prismjs/themes/prism.css');
+import headerLogo from '../assets/header logo.svg';
 
 const Header = () => (
   <div>
     <div className="header-container">
       <Link to="/" className="header-blog-name">
-        Josiah Nunemaker
-        <span className="header-subtitle">Blog</span>
-        <div className="header-underline" />
+        <img src={headerLogo} alt="Header" />
       </Link>
     </div>
     <div className="nav-container">
