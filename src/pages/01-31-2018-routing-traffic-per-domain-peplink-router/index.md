@@ -1,6 +1,6 @@
 ---
 title: "Routing traffic per-domain with a Peplink Router"
-path: '/routing-traffic-per-domain-peplink-router'
+path: '/posts/routing-traffic-per-domain-peplink-router'
 date: "2018-01-31T20:23:14Z"
 tags:
 - networking

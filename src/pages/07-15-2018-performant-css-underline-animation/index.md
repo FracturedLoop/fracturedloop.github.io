@@ -1,7 +1,7 @@
 ---
-title: "Performant CSS Underline animations"
-path: "/performant-css-underline-animations"
-date: "2018-07-15T17:34:18Z"
+title: 'Performant CSS Underline animations'
+path: '/posts/performant-css-underline-animations'
+date: '2018-07-15T17:34:18Z'
 tags:
 - tutorial
 - performance

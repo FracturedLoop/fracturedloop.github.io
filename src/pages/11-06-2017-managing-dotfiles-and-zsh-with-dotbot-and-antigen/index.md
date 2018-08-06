@@ -1,5 +1,5 @@
 ---
-path: '/managing-dotfiles-and-zsh-with-dotbot-and-antigen'
+path: '/posts/managing-dotfiles-and-zsh-with-dotbot-and-antigen'
 date: "2017-11-06T20:23:14Z"
 title: "Managing dotfiles and ZSH with dotbot and antigen"
 tags: 

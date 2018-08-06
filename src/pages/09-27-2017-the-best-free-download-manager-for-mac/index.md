@@ -1,5 +1,5 @@
 ---
-path: '/best-free-download-manager-for-mac'
+path: '/posts/best-free-download-manager-for-mac'
 unpublished: 'true'
 date: "2017-09-27T20:23:14Z"
 title: "The Best Free Download Manager for Mac"

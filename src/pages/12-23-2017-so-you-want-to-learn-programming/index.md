@@ -1,6 +1,6 @@
 ---
 title: "So you want to learn programming (and other things), eh?"
-path: '/so-you-want-to-learn-programming'
+path: '/posts/so-you-want-to-learn-programming'
 date: "2017-12-14T20:23:14Z"
 tags:
 - learning

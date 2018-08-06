@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import TagsList from '../components/TagsList';
 
 import { formatPostTags } from '../utils/utils';
 
@@ -25,7 +24,6 @@ export default function Template({ data }) {
 
   return (
     <div className="blog-posts">
-      <TagsList tags={tags} />
       {posts.map(({ node: post }) => (
         <Link
           to={post.frontmatter.path}

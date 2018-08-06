@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import TagsList from '../components/TagsList';
 
 import '../css/core.scss'; // add some style if you want!
 
@@ -21,7 +20,6 @@ export default function Index({ data }) {
 
   return (
     <div>
-      <TagsList tags={tags} />
       <div className="blog-posts">
         {posts
           .filter(

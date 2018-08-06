@@ -52,6 +52,9 @@ html {
 }
 
 body {
+  margin: 5px;
+  margin-left: calc(44px + 5px); // add 44px to left margin to account for the navbar
+  
   font-size: 62.5%;
 }
 
@@ -140,26 +143,6 @@ a {
   & > img {
     max-width: 100%;
   }
-}
-
-.header-subtitle {
-  position: relative;
-  font-family: Milkshake;
-  font-size: 1em;
-  @media screen and (min-width: $page-mid) {
-    font-size: 0.8em;
-  }
-  top: 4px;
-  left: 2px;
-}
-
-.header-underline {
-  position: absolute;
-  height: 1px;
-  background-color: #464646;
-  bottom: 0;
-  left: 0;
-  width: 83%;
 }
 
 /*****

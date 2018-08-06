@@ -1,7 +1,7 @@
 ---
-title: "Fixing mobile hover effects"
-path: "/fixing-mobile-hover-effects"
-date: "2018-07-17T13:34:18Z"
+title: 'Fixing mobile hover effects'
+path: '/posts/fixing-mobile-hover-effects'
+date: '2018-07-17T13:34:18Z'
 tags:
 - optimization
 - css

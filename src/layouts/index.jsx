@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
+import Navbar from '../components/Navbar';
+
 import 'prismjs/themes/prism.css';
 
 import '../css/core.scss';
@@ -17,7 +19,7 @@ const Header = () => (
         <img src={headerLogo} alt="Header" />
       </Link>
     </div>
-    <div className="nav-container">
+    {/* <div className="nav-container">
       <Link className="nav-btn" to="/">
         Home
       </Link>
@@ -27,7 +29,7 @@ const Header = () => (
       <Link className="nav-btn" to="/contact">
         Contact
       </Link>
-    </div>
+    </div> */}
   </div>
 );
 
@@ -48,12 +50,9 @@ const TemplateWrapper = ({ children }) => (
         name="google-site-verification"
         content="iTqQGhz5A11iZYYP6fr9lS1lpnduASXddf5sr9tUN78"
       />
-      <link
-        href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700|Raleway:400,500,600,800"
-        rel="stylesheet"
-      />
     </Helmet>
     <Header />
+    <Navbar />
     <div
       style={{
         margin: '0 auto',
