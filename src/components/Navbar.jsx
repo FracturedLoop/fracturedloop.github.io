@@ -38,9 +38,9 @@ export default () => (
         </Link>
       </div>
     </div>
-    <Link to="/projects" activeClassName="selected">
+    {/* <Link to="/projects" activeClassName="selected">
       Projects
-    </Link>
+    </Link> */}
     <Link to="/about" activeClassName="selected">
       About
     </Link>

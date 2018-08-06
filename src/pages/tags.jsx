@@ -18,7 +18,7 @@ export default function Tags({ data }) {
 
   return (
     <div>
-      <h1>Looking or something?</h1>
+      <h1>Looking for something?</h1>
       <h3>You can find posts on a specific topic here.</h3>
       {tags.map(tag => (
         <Link
