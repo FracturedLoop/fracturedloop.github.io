@@ -12,16 +12,16 @@ const AboutPage = () => (
     I tinker with all sorts of things, but my passion is building rich user
     interfaces.
     <p>
-      <b>React</b> is my friend :)
+      <i>React</i> is my friend :)
     </p>
     <p>
-      Oh, and I also use <b>GraphQL</b>, or, more particularly, <b>Apollo</b>.
+      Oh, and I also use <i>GraphQL</i>, or, more particularly, <i>Apollo</i>.
     </p>
     <p>
-      <b>Node.js</b> with <b>Express</b>, too.
+      <i>Node.js</i> with <i>Express</i>, too.
     </p>
     <p>
-      I also tinker with <b>MySQL</b>.
+      I also tinker with <i>MySQL</i>.
     </p>
     <p>
       Feel free to check out some of my{' '}
