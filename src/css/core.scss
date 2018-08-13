@@ -65,7 +65,7 @@ a {
 }
 
 @include hoverable {
-  a::after {
+  .MainPage a::after {
     content: '';
     
     position: absolute;
@@ -82,7 +82,7 @@ a {
     transition: 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   
-  a:hover::after {
+  .MainPage a:hover::after {
     opacity: 1;
     transform: translateX(-50%) scaleX(1);
   }
