@@ -4,8 +4,14 @@ const blogPostTemplate = path.resolve(`src/templates/blog-post.jsx`);
 const tagTemplate = path.resolve(`src/templates/tag.jsx`);
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage, createRedirect } = boundActionCreators;
 
+  createRedirect({
+    fromPath: '/about',
+    redirectInBrowser: true,
+    toPath: '/about/person',
+  });
+  
   return graphql(`
     {
       allMarkdownRemark(

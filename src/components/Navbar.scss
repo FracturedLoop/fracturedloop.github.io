@@ -28,12 +28,14 @@
     position: relative;
     float: right;
     width: 0;
+    height: 0;
     
     transform: scaleX(0);
   }
   
   & .selected + .sublinks {
     width: auto;
+    height: auto;
     
     transform: scaleX(1);
     
@@ -51,6 +53,18 @@
       background-position: center;
       
       transform: rotate(90deg);
+    }
+    
+    & > a {
+      margin: 0.5em;
+      
+      &:first-child {
+        margin-left: 15px;
+      }
+      
+      &:last-child {
+        margin-right: 15px;
+      }
     }
     
     &:after {
