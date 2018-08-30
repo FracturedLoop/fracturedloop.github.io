@@ -7,7 +7,7 @@ export default () => {
         <h1>So you want to know a bit about me, eh?</h1>
       </div>
       <p>
-        Well, as you've proabably already noticed, my name is Josiah. I've had the opportunity to work in some pretty cool places with great people. If you want to know more about that, feel free to check me out on <a href="https://www.linkedin.com/in/josnun">LinkedIn</a>.
+        Well, as you've proabably already noticed, my name is Josiah. I've had the opportunity to work in some pretty cool places with great people. If you want to know more about that, feel free to check me out on <a href="https://www.linkedin.com/in/josnun" target="_blank" >LinkedIn</a>.
       </p>
       <p>
         As far as me as a person, though? I guess the largest influencer to me as a person is the fact that I'm a <a href="http://radical.net/the-gospel/">Christian</a>. I get that that doesn't mean much to most people, but still, it's a significant part of who I am, and why I do what I do.
