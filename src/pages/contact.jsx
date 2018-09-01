@@ -14,10 +14,9 @@ const ContactPage = () => (
     </p>
     <p>
       You can shoot me an email at{' '}
-      <a href="mailto:josiah.nunemaker@gmail.com">josiah.nunemaker@gmail.com</a>.
+      <a href="mailto:josiah.nunemaker@gmail.com">josiah.nunemaker@gmail.com</a>
+      . I look forward to hearing from you :)
     </p>
-    Didn’t want to contact me? Okay, feel free to{' '}
-    <Link to="/">go back to the homepage</Link> then.
   </div>
 );
 

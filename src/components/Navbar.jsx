@@ -132,7 +132,7 @@ export default () => (
       isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
       activeClassName="selected"
     >
-      Home
+      Blog
     </MainLink>
     <SublinkGroup>
       <SubLink to="/tags" activeClassName="selected">
