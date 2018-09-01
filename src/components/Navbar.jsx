@@ -38,21 +38,19 @@ export default () => (
         </Link>
       </div>
     </div>
-    {/* <Link to="/projects" activeClassName="selected">
-      Projects
-    </Link> */}
     <div className="navgroup">
       <Link to="/about" className="primary-link"
         isActive={isSub.bind(this, ['/about', '/about/*'])} activeClassName="selected">
         About
-    </Link>
-
+      </Link>
       <div className="sublinks">
         <Link to="/about/person" activeClassName="selected" >As a person</Link>
         <Link to="/about/developer" activeClassName="selected" >As a developer</Link>
       </div>
-
     </div>
+    <Link to="/projects" activeClassName="selected">
+      Projects
+    </Link>
     <Link to="/contact" activeClassName="selected">
       Contact
     </Link>
