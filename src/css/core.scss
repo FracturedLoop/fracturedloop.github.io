@@ -1,4 +1,5 @@
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,800');
 
 $page-small: 320px;
 $page-mid: 520px;
@@ -6,12 +7,6 @@ $page-large: 960px;
 
 $text-color: #404040;
 
-@font-face {
-  font-family: 'Milkshake';
-  src: url('../assets/Milkshake.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'FiraCode';
@@ -56,6 +51,7 @@ body {
   margin-left: calc(44px + 5px); // add 44px to left margin to account for the navbar
   
   font-size: 62.5%;
+  font-family: 'Raleway';
 }
 
 a {
@@ -152,7 +148,7 @@ a {
 *****/
 
 .nav-container {
-  font-family: Raleway;
+  font-family: 'Raleway';
   display: flex;
   font-size: 70%;
   text-align: center;
