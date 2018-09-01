@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
@@ -6,7 +6,7 @@ import Chevron from '../assets/chevron.svg';
 
 const StyledNavbar = styled.nav`
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 44px;
   width: 100vh;
@@ -16,8 +16,8 @@ const StyledNavbar = styled.nav`
   justify-content: flex-start;
 
   background-color: #424242;
-  transform-origin: top right;
-  transform: translate(-100%) rotate(-90deg);
+  transform-origin: top left;
+  transform: rotate(-90deg) translate(-44px);
 
   /* For development purposes */
   /* transform: translate(0) rotate(0); */
@@ -127,44 +127,52 @@ const isSub = (paths, match, location) => {
   return false;
 };
 
-export default () => (
-  <StyledNavbar className="navbar">
-    <MainLink
-      to="/"
-      className="primary-link"
-      isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
-      activeClassName="selected"
-    >
-      Blog
-    </MainLink>
-    <SublinkGroup>
-      <SubLink to="/tags" activeClassName="selected">
-        Tags
-      </SubLink>
-    </SublinkGroup>
+class Navbar extends Component {
+  componentDidMount() {}
 
-    <MainLink
-      to="/about"
-      className="primary-link"
-      isActive={isSub.bind(this, ['/about', '/about/*'])}
-      activeClassName="selected"
-    >
-      About
-    </MainLink>
-    <SublinkGroup>
-      <SubLink to="/about/person" activeClassName="selected">
-        As a person
-      </SubLink>
-      <SubLink to="/about/developer" activeClassName="selected">
-        As a developer
-      </SubLink>
-    </SublinkGroup>
+  render() {
+    return (
+      <StyledNavbar className="navbar">
+        <MainLink
+          to="/"
+          className="primary-link"
+          isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
+          activeClassName="selected"
+        >
+          Blog
+        </MainLink>
+        <SublinkGroup>
+          <SubLink to="/tags" activeClassName="selected">
+            Tags
+          </SubLink>
+        </SublinkGroup>
 
-    <MainLink to="/projects" activeClassName="selected">
-      Projects
-    </MainLink>
-    <MainLink to="/contact" activeClassName="selected">
-      Contact
-    </MainLink>
-  </StyledNavbar>
-);
+        <MainLink
+          to="/about"
+          className="primary-link"
+          isActive={isSub.bind(this, ['/about', '/about/*'])}
+          activeClassName="selected"
+        >
+          About
+        </MainLink>
+        <SublinkGroup>
+          <SubLink to="/about/person" activeClassName="selected">
+            As a person
+          </SubLink>
+          <SubLink to="/about/developer" activeClassName="selected">
+            As a developer
+          </SubLink>
+        </SublinkGroup>
+
+        <MainLink to="/projects" activeClassName="selected">
+          Projects
+        </MainLink>
+        <MainLink to="/contact" activeClassName="selected">
+          Contact
+        </MainLink>
+      </StyledNavbar>
+    );
+  }
+}
+
+export default Navbar;
