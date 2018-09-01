@@ -31,7 +31,7 @@ export default () => (
     <h3>And for backend?</h3>
     <p>
       As far as language, I use Node.js. I often use Express as well for the
-      framework. I’ve worked with Apollo Server when IÆm working with GraphQL
+      framework. I’ve worked with Apollo Server when I’m working with GraphQL
       server-side too. When I need to store data for an extended period of time,
       I usually reach for a relational database like Postgres or MySQL. To make
       things syntactically easier when working in Node, I use Knex.js for
@@ -42,7 +42,7 @@ export default () => (
       some of my <a href="https://github.com/josnun">projects.</a>
     </p>
 
-    <h3>WhereÆd you get your programming start?</h3>
+    <h3>Where’d you get your programming start?</h3>
     <p>
       I’ve always liked working with computers, and I’m also quite curious as
       well. At one point in time quite a while ago, I had wanted to build a
@@ -51,10 +51,7 @@ export default () => (
       was back in the CSS 2 days). I continued to tinker with it a bit, but I
       was never really passionate about it. At some point, I had gotten involved
       in a{' '}
-      <a
-        href="https://biohazard4050.org"
-        target="_blank noopener noreferrer noopener noreferrer"
-      >
+      <a href="https://biohazard4050.org" target="_blank noopener noreferrer">
         robotics team
       </a>
       , and for a year or so, I was really the only computer-savvy student at
