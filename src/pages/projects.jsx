@@ -5,6 +5,7 @@ import Project from '../components/Project';
 import PrayerShareCover from '../assets/projects/images/prayershare.png';
 import CodenamesCover from '../assets/projects/images/codenames.png';
 import AscendCover from '../assets/projects/images/ascend.png';
+import BibleCover from '../assets/projects/images/bible.png';
 
 export default () => {
   return (
@@ -27,6 +28,12 @@ export default () => {
         label: 'Repo',
         url: 'https://github.com/JosNun/ascend-performance',
       }]}>Ascend Performance is a ficticious company I dreamed up to practice my design skills. Additionally, making the website gave me the opportunity to try out some new technologies, such as Styled Components.</Project>
+
+      <Project title="Night Mode Bible" coverImage={BibleCover} cta="View in the Web store" link="https://chrome.google.com/webstore/detail/night-mode-bible/ebiieffikaglhelcnogmmijmlejdhngk" altLinks={[{
+        label: 'Repo',
+        url: 'https://github.com/JosNun/night-mode-bible',
+      }]}>Night Mode Bible is a Chrome extension to make Bible.com easier on your eyes at night. It provides a toggleable dark mode that styles the UI to make it less blindingly bright.</Project>
+
       <Project title="Parabox" cta="Demo" link="https://codepen.io/FracturedLoop/full/VBXpbj/" altLinks={[{
         label: 'Repo',
         url: 'https://github.com/JosNun/parabox.js',
