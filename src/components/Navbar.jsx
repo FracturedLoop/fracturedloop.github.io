@@ -127,52 +127,44 @@ const isSub = (paths, match, location) => {
   return false;
 };
 
-class Navbar extends Component {
-  componentDidMount() {}
+export default () => (
+  <StyledNavbar className="navbar">
+    <MainLink
+      to="/"
+      className="primary-link"
+      isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
+      activeClassName="selected"
+    >
+      Blog
+    </MainLink>
+    <SublinkGroup>
+      <SubLink to="/tags" activeClassName="selected">
+        Tags
+      </SubLink>
+    </SublinkGroup>
 
-  render() {
-    return (
-      <StyledNavbar className="navbar">
-        <MainLink
-          to="/"
-          className="primary-link"
-          isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
-          activeClassName="selected"
-        >
-          Blog
-        </MainLink>
-        <SublinkGroup>
-          <SubLink to="/tags" activeClassName="selected">
-            Tags
-          </SubLink>
-        </SublinkGroup>
+    <MainLink
+      to="/about"
+      className="primary-link"
+      isActive={isSub.bind(this, ['/about', '/about/*'])}
+      activeClassName="selected"
+    >
+      About
+    </MainLink>
+    <SublinkGroup>
+      <SubLink to="/about/person" activeClassName="selected">
+        As a person
+      </SubLink>
+      <SubLink to="/about/developer" activeClassName="selected">
+        As a developer
+      </SubLink>
+    </SublinkGroup>
 
-        <MainLink
-          to="/about"
-          className="primary-link"
-          isActive={isSub.bind(this, ['/about', '/about/*'])}
-          activeClassName="selected"
-        >
-          About
-        </MainLink>
-        <SublinkGroup>
-          <SubLink to="/about/person" activeClassName="selected">
-            As a person
-          </SubLink>
-          <SubLink to="/about/developer" activeClassName="selected">
-            As a developer
-          </SubLink>
-        </SublinkGroup>
-
-        <MainLink to="/projects" activeClassName="selected">
-          Projects
-        </MainLink>
-        <MainLink to="/contact" activeClassName="selected">
-          Contact
-        </MainLink>
-      </StyledNavbar>
-    );
-  }
-}
-
-export default Navbar;
+    <MainLink to="/projects" activeClassName="selected">
+      Projects
+    </MainLink>
+    <MainLink to="/contact" activeClassName="selected">
+      Contact
+    </MainLink>
+  </StyledNavbar>
+);
