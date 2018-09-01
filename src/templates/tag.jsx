@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-import { formatPostTags } from '../utils/utils';
+import formatPostTags from '../utils/utils';
 
 export default function Template({ data }) {
   const { edges: posts } = data.posts; // data.markdownRemark holds our post data

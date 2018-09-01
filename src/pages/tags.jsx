@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 
 import '../css/core.scss'; // add some style if you want!

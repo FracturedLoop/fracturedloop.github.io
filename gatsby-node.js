@@ -11,7 +11,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     redirectInBrowser: true,
     toPath: '/about/person',
   });
-  
+
   return graphql(`
     {
       allMarkdownRemark(

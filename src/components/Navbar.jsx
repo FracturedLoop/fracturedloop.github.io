@@ -122,6 +122,7 @@ const isSub = (paths, match, location) => {
   if (isAMatch) {
     return true;
   }
+  return false;
 };
 
 export default () => (

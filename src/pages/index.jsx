@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 
 import '../css/core.scss'; // add some style if you want!
 
-import { formatPostTags } from '../utils/utils';
+import formatPostTags from '../utils/utils';
 
 export default function Index({ data }) {
   const { edges: posts } = data.posts;

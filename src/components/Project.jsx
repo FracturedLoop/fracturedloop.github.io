@@ -100,7 +100,7 @@ function makeAltLinks(linksArr) {
   if (typeof linksArr === 'undefined') return;
 
   const altLinks = linksArr.map((link, i) => (
-    <AltButton href={link.url} target="_blank" key={i}>
+    <AltButton href={link.url} target="_blank noopener noreferrer" key={i}>
       {link.label}
     </AltButton>
   ));
@@ -121,7 +121,7 @@ export default props => (
       <Title>{props.title}</Title>
       <Description>{props.children}</Description>
       <Links>
-        <PrimaryButton href={props.link} target="_blank">
+        <PrimaryButton href={props.link} target="_blank noopener noreferrer">
           {props.cta || 'Check it out'}
         </PrimaryButton>
         {makeAltLinks(props.altLinks)}
