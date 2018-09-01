@@ -65,7 +65,7 @@ a {
 }
 
 @include hoverable {
-  .MainPage a::after {
+  .MainPage a:not(.no-ul)::after {
     content: '';
     
     position: absolute;
@@ -82,12 +82,12 @@ a {
     transition: 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   
-  .MainPage a:hover::after {
+  .MainPage a:not(.no-ul):hover::after {
     opacity: 1;
     transform: translateX(-50%) scaleX(1);
   }
   
-  a.left-underline::after {
+  a:not(.no-ul).left-underline::after {
     left: 0;
     
     background: linear-gradient(to right, #404040, rgba(64, 64, 64, 0.9), rgba(64, 64, 64, 0.0));
@@ -96,7 +96,7 @@ a {
     transition-duration: 0.3s;
   }
   
-  a.left-underline:hover::after {
+  a:not(.no-ul).left-underline:hover::after {
     transform: scaleX(1);
   }
 }

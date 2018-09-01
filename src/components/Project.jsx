@@ -67,29 +67,27 @@ const Links = styled.div`
   }
 `;
 
-const LinkButton = styled.a`
+const LinkButton = styled.a.attrs({
+  className: 'no-ul',
+})`
   display: block;
   
   margin-right: 0.5em;
   margin-top: 1em;
   
-  background-color: #424242;
-  border: 2px solid #424242;
-  color: #fff;
   padding: 0 1em;
   `;
 
-const AltButton = styled.a`
-  display: block;
-  
-  box-sizing: border-box;
-  margin-right: 0.5em;
-  margin-top: 1em;  
+const PrimaryButton = styled(LinkButton)`
+  background-color: #424242;
+  border: 2px solid #424242;
+  color: #fff;
+`
 
+const AltButton = styled(LinkButton)`
   border: 2px solid #424242;
   color: #424242;
-  padding: 0 1em;
-`
+`;
 
 function makeAltLinks(linksArr) {
   if (typeof linksArr === 'undefined') return;
@@ -109,7 +107,7 @@ export default props => {
         <Title>{props.title}</Title>
         <Description>{props.children}</Description>
         <Links>
-          <LinkButton href={props.link} target="_blank">{props.cta || 'Check it out'}</LinkButton>
+          <PrimaryButton href={props.link} target="_blank">{props.cta || 'Check it out'}</PrimaryButton>
           {makeAltLinks(props.altLinks)}
         </Links>
       </Info>
