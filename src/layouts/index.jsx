@@ -19,17 +19,6 @@ const Header = () => (
         <img src={headerLogo} alt="Header" />
       </Link>
     </div>
-    {/* <div className="nav-container">
-      <Link className="nav-btn" to="/">
-        Home
-      </Link>
-      <Link className="nav-btn" to="/about">
-        About
-      </Link>
-      <Link className="nav-btn" to="/contact">
-        Contact
-      </Link>
-    </div> */}
   </div>
 );
 
