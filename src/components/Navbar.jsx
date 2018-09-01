@@ -1,7 +1,110 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 
-import './Navbar.scss';
+import Chevron from '../assets/chevron.svg';
+
+const StyledNavbar = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 44px;
+  width: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: #424242;
+  transform-origin: top right;
+  transform: translate(-100%) rotate(-90deg);
+
+  /* For development purposes */
+  /* transform: translate(0) rotate(0); */
+`;
+
+const MainLink = styled(Link)`
+  margin: 0 15px;
+
+  color: #ececec;
+
+  &.selected {
+    color: #fff;
+    font-weight: 800;
+  }
+`;
+
+const SublinkGroup = styled.div`
+  display: flex;
+  position: relative;
+  max-width: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  ${MainLink}.selected + & {
+    width: auto;
+    max-width: 100vh;
+    overflow: hidden;
+
+    & > a {
+      margin: 0.5em;
+
+      &:first-child {
+        margin-left: 15px;
+      }
+
+      &:last-child {
+        margin-right: 15px;
+      }
+    }
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    content: '';
+
+    position: absolute;
+
+    width: 10px;
+    height: 100%;
+    left: -3px;
+
+    background: url(${Chevron});
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0;
+
+    transform: rotate(90deg);
+
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 0;
+
+    opacity: 0;
+
+    background-color: #fff;
+
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+`;
+
+const SubLink = styled(MainLink)``;
 
 const isSub = (paths, match, location) => {
   if (paths.includes(location.pathname)) {
@@ -22,37 +125,43 @@ const isSub = (paths, match, location) => {
 };
 
 export default () => (
-  <nav className="navbar">
-    <div className="navgroup">
-      <Link
-        to="/"
-        className="primary-link"
-        isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
-        activeClassName="selected"
-      >
-        Home
-      </Link>
-      <div className="sublinks">
-        <Link to="/tags" activeClassName="selected">
-          Tags
-        </Link>
-      </div>
-    </div>
-    <div className="navgroup">
-      <Link to="/about" className="primary-link"
-        isActive={isSub.bind(this, ['/about', '/about/*'])} activeClassName="selected">
-        About
-      </Link>
-      <div className="sublinks">
-        <Link to="/about/person" activeClassName="selected" >As a person</Link>
-        <Link to="/about/developer" activeClassName="selected" >As a developer</Link>
-      </div>
-    </div>
-    <Link to="/projects" activeClassName="selected">
+  <StyledNavbar className="navbar">
+    <MainLink
+      to="/"
+      className="primary-link"
+      isActive={isSub.bind(this, ['/', '/tags', '/tags/*', '/posts/*'])}
+      activeClassName="selected"
+    >
+      Home
+    </MainLink>
+    <SublinkGroup>
+      <SubLink to="/tags" activeClassName="selected">
+        Tags
+      </SubLink>
+    </SublinkGroup>
+
+    <MainLink
+      to="/about"
+      className="primary-link"
+      isActive={isSub.bind(this, ['/about', '/about/*'])}
+      activeClassName="selected"
+    >
+      About
+    </MainLink>
+    <SublinkGroup>
+      <SubLink to="/about/person" activeClassName="selected">
+        As a person
+      </SubLink>
+      <SubLink to="/about/developer" activeClassName="selected">
+        As a developer
+      </SubLink>
+    </SublinkGroup>
+
+    <MainLink to="/projects" activeClassName="selected">
       Projects
-    </Link>
-    <Link to="/contact" activeClassName="selected">
+    </MainLink>
+    <MainLink to="/contact" activeClassName="selected">
       Contact
-    </Link>
-  </nav>
+    </MainLink>
+  </StyledNavbar>
 );
