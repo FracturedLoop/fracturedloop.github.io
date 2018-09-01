@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 // import '../css/core.scss'; // make it pretty!
 
-import formatPostTags from '../utils/utils';
+import { formatPostTags } from '../utils/utils';
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
