@@ -10,7 +10,7 @@ import 'prismjs/themes/prism.css';
 
 import '../css/core.scss';
 
-import headerLogo from '../assets/header logo.svg';
+import headerLogo from '../assets/header.svg';
 
 const Header = () => (
   <div>
