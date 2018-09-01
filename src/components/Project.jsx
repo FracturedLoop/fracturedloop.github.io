@@ -58,7 +58,12 @@ const Description = styled.p`
 
 const Links = styled.div`
   display: flex;
-`
+  justify-content: center;
+  
+  @media screen and (min-width: 768px) {
+    justify-content: initial;
+  }
+`;
 
 const LinkButton = styled.a`
   display: block;
@@ -95,7 +100,7 @@ function makeAltLinks(linksArr) {
 export default props => {
   return (
     <StyledProject>
-      <CoverImage className="cover-image" src={props.coverImage} alt="project image" />
+      {props.coverImage && <CoverImage className="cover-image" src={props.coverImage} alt="project image" />}
       <Info>
         <Title>{props.title}</Title>
         <Description>{props.children}</Description>
