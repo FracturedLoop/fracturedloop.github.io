@@ -59,6 +59,8 @@ const Description = styled.p`
 const Links = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -1em; 
   
   @media screen and (min-width: 768px) {
     justify-content: initial;
@@ -69,6 +71,7 @@ const LinkButton = styled.a`
   display: block;
   
   margin-right: 0.5em;
+  margin-top: 1em;
   
   background-color: #424242;
   border: 2px solid #424242;
@@ -81,6 +84,7 @@ const AltButton = styled.a`
   
   box-sizing: border-box;
   margin-right: 0.5em;
+  margin-top: 1em;  
 
   border: 2px solid #424242;
   color: #424242;
