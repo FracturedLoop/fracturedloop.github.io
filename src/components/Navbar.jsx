@@ -92,12 +92,14 @@ const SublinkGroup = styled.div`
     content: '';
     position: absolute;
     width: 1px;
-    height: 100%;
+    height: calc(100% - 15px);
+    top: 50%;
     right: 0;
 
     opacity: 0;
 
     background-color: #fff;
+    transform: translateY(-50%);
 
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
