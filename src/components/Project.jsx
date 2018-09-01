@@ -86,7 +86,7 @@ function makeAltLinks(linksArr) {
   if (typeof linksArr === 'undefined') return;
 
   let altLinks = linksArr.map((link, i) =>
-    <AltButton href="link.url" target="_blank" key={i}>{link.label}</AltButton>
+    <AltButton href={link.url} target="_blank" key={i}>{link.label}</AltButton>
   )
 
   return altLinks;
