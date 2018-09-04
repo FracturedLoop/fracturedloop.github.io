@@ -4,6 +4,7 @@ import Project from '../components/Project';
 
 import PrayerShareCover from '../assets/projects/images/prayershare.png';
 import CodenamesCover from '../assets/projects/images/codenames.png';
+import SitantCover from '../assets/projects/images/sitant.png';
 import AscendCover from '../assets/projects/images/ascend.png';
 import BibleCover from '../assets/projects/images/bible.png';
 
@@ -47,6 +48,22 @@ export default () => (
       communication runs on WebSockets and is powered by Socket.io. <b>Note:</b>{' '}
       It may take a few seconds for the container to spin up if it has been
       inactive for a while.
+    </Project>
+    <Project
+      title="Sitant"
+      coverImage={SitantCover}
+      link="https://chrome.google.com/webstore/detail/sitant-simple-tasks-in-ne/koggochfeennbhkkjmbpbhfhociingae"
+      cta="View in the Web Store"
+      altLinks={[
+        {
+          label: 'Repo',
+          url: 'https://github.com/JosNun/sitant',
+        },
+      ]}
+    >
+      Sitant is a minimal, yet incredibly functional new tab replacement. It
+      provides a quick place to jot down notes, todos, or tasks without a bunch
+      of additional fluff.
     </Project>
     <Project
       title="Ascend Performance"
