@@ -39,6 +39,7 @@ const TemplateWrapper = ({ children }) => (
         name="google-site-verification"
         content="iTqQGhz5A11iZYYP6fr9lS1lpnduASXddf5sr9tUN78"
       />
+      <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
     </Helmet>
     <Header />
     <Navbar />
