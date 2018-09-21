@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Josiah's Site]]></title><description><![CDATA[The website, blog, and portfolio for Josiah Nunemaker]]></description><link>josnun.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Sep 2018 00:28:28 GMT</lastBuildDate><item><title><![CDATA[Fixing mobile hover effects]]></title><description><![CDATA[One of the worst parts about hover effects is that they often look horrible on mobile devices because they trigger on click... Then don't go…]]></description><link>josnun.github.io/posts/fixing-mobile-hover-effects</link><guid isPermaLink="false">josnun.github.io/posts/fixing-mobile-hover-effects</guid><pubDate>Tue, 17 Jul 2018 13:34:18 GMT</pubDate><content:encoded>&lt;p&gt;One of the worst parts about hover effects is that they often look horrible on mobile devices because they trigger on click... Then don&apos;t go away and just sit there (laughing at you I guess). I got irritated, so I began wondering if there is a fix (Spoiler alert: there is). The solution is in CSS media queries. There&apos;s a neat little &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features&quot;&gt;media feature&lt;/a&gt; called &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;hover&lt;/code&gt;&lt;/a&gt;. I bet you can imagine what it does. Basically, if the &lt;em&gt;primary&lt;/em&gt; input method supports hovering, it&apos;ll pass, otherwise, the css will be skipped.   An easy way to test this is to use your browser&apos;s &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/device-mode/&quot;&gt;mobile device simulator&lt;/a&gt;. &lt;/p&gt;
+&lt;iframe height=&apos;265&apos; scrolling=&apos;no&apos; title=&apos;CSS underline only when supported&apos; src=&apos;//codepen.io/FracturedLoop/embed/XBKjNK/?height=265&amp;theme-id=dark&amp;default-tab=css,result&amp;embed-version=2&apos; frameborder=&apos;no&apos; allowtransparency=&apos;true&apos; allowfullscreen=&apos;true&apos; style=&apos;width: 100%;&apos;&gt;See the Pen &lt;a href=&apos;https://codepen.io/FracturedLoop/pen/XBKjNK/&apos;&gt;CSS underline only when supported&lt;/a&gt; by Josiah Nunemaker (&lt;a href=&apos;https://codepen.io/FracturedLoop&apos;&gt;@FracturedLoop&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+&lt;p&gt;If you did some looking around the MDN page for &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features&quot;&gt;media features&lt;/a&gt;, you may have noticed that there&apos;s another similar feature called &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;any-hover&lt;/code&gt;&lt;/a&gt;. This is similar to &lt;code class=&quot;language-text&quot;&gt;hover&lt;/code&gt; with the exception that &lt;code class=&quot;language-text&quot;&gt;any-hover&lt;/code&gt; will pass if &lt;em&gt;any&lt;/em&gt; of your input devices supports hovering, which could include a mouse or hover-capable touch screens.&lt;/p&gt;
+&lt;h3&gt;Bonus SCSS Mixin&lt;/h3&gt;
+&lt;p&gt;If you use SCSS, here&apos;s a simple mixin to cut out some of the syntax fluff. Enjoy :)&lt;/p&gt;
+&lt;iframe height=&apos;265&apos; scrolling=&apos;no&apos; title=&apos;SCSS underline only when supported mixin&apos; src=&apos;//codepen.io/FracturedLoop/embed/MBebXQ/?height=265&amp;theme-id=dark&amp;default-tab=css,result&amp;embed-version=2&apos; frameborder=&apos;no&apos; allowtransparency=&apos;true&apos; allowfullscreen=&apos;true&apos; style=&apos;width: 100%;&apos;&gt;See the Pen &lt;a href=&apos;https://codepen.io/FracturedLoop/pen/MBebXQ/&apos;&gt;SCSS underline only when supported mixin&lt;/a&gt; by Josiah Nunemaker (&lt;a href=&apos;https://codepen.io/FracturedLoop&apos;&gt;@FracturedLoop&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Performant CSS Underline animations]]></title><description><![CDATA[With CSS, there's plenty of ways to do an underline. Borders, box shadows, pseudo elements... The list goes on and on. But is any one method…]]></description><link>josnun.github.io/posts/performant-css-underline-animations</link><guid isPermaLink="false">josnun.github.io/posts/performant-css-underline-animations</guid><pubDate>Sun, 15 Jul 2018 17:34:18 GMT</pubDate><content:encoded>&lt;p&gt;With CSS, there&apos;s plenty of ways to do an underline. Borders, box shadows, pseudo elements... The list goes on and on. But is any one method better than another? Let&apos;s take a look at a few methods of doing a simple animated underline, then we&apos;ll dig a bit deeper into the differences between them.&lt;/p&gt;
+&lt;h3&gt;Animating the border.&lt;/h3&gt;
+&lt;p&gt;The first method involves animating the border of an element. &lt;/p&gt;
+&lt;iframe height=&apos;265&apos; scrolling=&apos;no&apos; title=&apos;Performant underline animation__border-animation&apos; src=&apos;//codepen.io/FracturedLoop/embed/RBrxJm/?height=265&amp;theme-id=dark&amp;default-tab=css,result&amp;embed-version=2&apos; frameborder=&apos;no&apos; allowtransparency=&apos;true&apos; allowfullscreen=&apos;true&apos; style=&apos;width: 100%;&apos;&gt;See the Pen &lt;a href=&apos;https://codepen.io/FracturedLoop/pen/RBrxJm/&apos;&gt;Performant underline animation__border-animation&lt;/a&gt; by Josiah Nunemaker (&lt;a href=&apos;https://codepen.io/FracturedLoop&apos;&gt;@FracturedLoop&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+&lt;p&gt;It&apos;s probably the simplest method, but it comes with a few downfalls. Probably first on the problem list is that fact that it modifies the element&apos;s box model, which causes the entire element to repaint. In most cases, this is probably not an issue, but if you had a large element using this, things could get a little laggy. The second issue with this method is probably more important than the first. As you probably noticed, this animation isn&apos;t exactly the smoothest animation. This is because most browsers round to the nearest pixel when rendering things to increase performance. As a result, the animation jumps when it&apos;s size is animating. Finally, because we are animating the element&apos;s border, this method won&apos;t work if you are using the border already (well, it &lt;em&gt;would&lt;/em&gt; work, but it would probably look horrible).&lt;/p&gt;
+&lt;h3&gt;A pseudo element&lt;/h3&gt;
+&lt;p&gt;This method has a similar result to the first method, but has a slight increase in performance.&lt;/p&gt;
+&lt;iframe height=&apos;265&apos; scrolling=&apos;no&apos; title=&apos;Performant underline animation__pseudo-element&apos; src=&apos;//codepen.io/FracturedLoop/embed/ZjQvPv/?height=265&amp;theme-id=dark&amp;default-tab=css,result&amp;embed-version=2&apos; frameborder=&apos;no&apos; allowtransparency=&apos;true&apos; allowfullscreen=&apos;true&apos; style=&apos;width: 100%;&apos;&gt;See the Pen &lt;a href=&apos;https://codepen.io/FracturedLoop/pen/ZjQvPv/&apos;&gt;Performant underline animation__pseudo-element&lt;/a&gt; by Josiah Nunemaker (&lt;a href=&apos;https://codepen.io/FracturedLoop&apos;&gt;@FracturedLoop&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+&lt;p&gt;This method is relatively straightforward. Instead of using the elements border as an underline, this method uses a pseudo element. (If you don&apos;t know what pseudo elements are, MDN covers it pretty well &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements&quot;&gt;here&lt;/a&gt;.) There&apos;s a few advantages to using this method. Firstly, you can use it on an element that has an existing border. What&apos;s probably more important, however, is the fact that you are using CSS transforms, which greatly speeds up the animation. Also, the underline is a completely seperate element, so you could style it however you want (Rounded corners, anyone?), and also enables the use of relative sizes for the underline, like percentages.&lt;/p&gt;
+&lt;p&gt;As you may have noticed, though, there&apos;s still the issue with rounding and glitchy animation in some cases, but overall, performance is a lot better. Another potential issue is that it requires a pseudo element, so you can&apos;t be using both :before and :after pseudo elements. Probably the largest issue (or potentially greatest benefit) is that it only places one underline under the entire element, even if there are multiple lines. With the border method, there will be an underline on every line.&lt;/p&gt;
+&lt;h3&gt;A smoother solution&lt;/h3&gt;
+&lt;p&gt;So what can we do about the glitchy animation? Well, there&apos;s a relatively simple solution. &lt;/p&gt;
+&lt;iframe height=&apos;265&apos; scrolling=&apos;no&apos; title=&apos;Performant underline animation__scaled-pseudo-element&apos; src=&apos;//codepen.io/FracturedLoop/embed/EpPQYe/?height=265&amp;theme-id=dark&amp;default-tab=css,result&amp;embed-version=2&apos; frameborder=&apos;no&apos; allowtransparency=&apos;true&apos; allowfullscreen=&apos;true&apos; style=&apos;width: 100%;&apos;&gt;See the Pen &lt;a href=&apos;https://codepen.io/FracturedLoop/pen/EpPQYe/&apos;&gt;Performant underline animation__scaled-pseudo-element&lt;/a&gt; by Josiah Nunemaker (&lt;a href=&apos;https://codepen.io/FracturedLoop&apos;&gt;@FracturedLoop&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+&lt;p&gt;Boom. That&apos;s a lot smoother isn&apos;t it? By sizing up the element up, then using CSS transforms to shrink it back down, the browser will be rendering the whole-number values, but shrink the entire element down. This results in smoother animation because it is rendering the interpolated values of the animation. The difference between the animtaions becomes really obvious when you &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations#inspect&quot;&gt;slow down the animation&lt;/a&gt; using devtools. &lt;a href=&quot;https://codepen.io/FracturedLoop/full/pZgdGv/&quot;&gt;Here&apos;s&lt;/a&gt; a link if you want to compare the three methods. It also has the same benefits as the other method using the pseudo-element.&lt;/p&gt;
+&lt;p&gt;So are there any cons? Sadly, yes. This suffers the same issues as the previous method, with the exception of the jittery animation. But for most instances the benefits greatly outweigh the cons, as you rarely deal with multiple pseudo elements anyway.&lt;/p&gt;
+&lt;p&gt;This is only a few methods of animating an underline, and there&apos;s many more methods out there. For the most part though, one of these methods will work well, and greatly simplify things compared to more complex methods.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GraphQL: Why?]]></title><description><![CDATA[GraphQL is one of those hot new technologies that is showing a lot of promise,
+and is also being adopted in a bunch of industries. But what…]]></description><link>josnun.github.io/posts/graphql-why</link><guid isPermaLink="false">josnun.github.io/posts/graphql-why</guid><pubDate>Mon, 26 Mar 2018 12:23:14 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL is one of those hot new technologies that is showing a lot of promise,
+and is also being adopted in a bunch of industries. But what is GraphQL? Is it a
+programming language? A Library? A Framework? In actuality, it&apos;s none of those
+things. So what is GraphQL? GraphQL is a &lt;em&gt;query language.&lt;/em&gt; &quot;A what?!&quot; you ask?
+Basically, GraphQL is a new way of requesting and modifying information on a
+server. It&apos;s kinda like a REST API mixed with SQL, but better. How is it better
+you ask? Let&apos;s do a quick comparison...&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;GraphQL&lt;/th&gt;
+&lt;th&gt;REST&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Single Endpoint&lt;/td&gt;
+&lt;td&gt;Multiple endpoints&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Select what data you want from the server&lt;/td&gt;
+&lt;td&gt;Get whatever the server sends you&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Real-time communication&lt;/td&gt;
+&lt;td&gt;Requires server polling for information&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GraphQL sits in between your client and server&lt;/td&gt;
+&lt;td&gt;REST is integrated into your application&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;That&apos;s an impressive list of differences, right? Now, what does it mean in
+everyday English?&lt;/p&gt;
+&lt;p&gt;With a REST API, there&apos;s different endpoints, or URLs, that you send requests to
+to get information. Let&apos;s say for example, we have a retreat booking site. For
+their website, we need to get information about their locations, so we could
+request information from &lt;code class=&quot;language-text&quot;&gt;www.someretreat.com/locations&lt;/code&gt;, and that would return
+us information about all their locations. What if we want information about one
+of the locations? Then, we would need to request information from another
+endpoint. Maybe &lt;code class=&quot;language-text&quot;&gt;www.someretreat.com/locations/villa&lt;/code&gt; would be where we send our
+request to. Great, now we have information about the place! Let&apos;s book a room...
+To get the available dates, we&apos;d need to send our request to yet another
+endpoint... Maybe something like &lt;code class=&quot;language-text&quot;&gt;www.someretreat.com/locations/villa/dates&lt;/code&gt;.
+Wow... That&apos;s three requests, all for information about one room. Kinda
+rediculous right? What would that look like with GraphQL? Well, we have a single
+endpoint, so we will send all requests to that location, so maybe
+&lt;code class=&quot;language-text&quot;&gt;www.someretreat.com/api&lt;/code&gt; or something similar. But how do we get the
+information that we need? You know, all of their locations, basic information
+about that location, and the available dates. With GraphQL, you send a &lt;em&gt;query&lt;/em&gt;
+to that endpoint, and that is going to determine what information you get back.
+For example, to get the locations, you might send a request like&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  locations
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Woohoo! The server gave us the information about the locations! But... how is
+this better than REST?&lt;/p&gt;
+&lt;p&gt;This is where GraphQL begins to make sense. Since GraphQL is a query language,
+you can select what information you want from the server. So instead of sending
+two additional different requests to the server for each location, we can get
+all the data we need in one single query. Let&apos;s replicate the previous example,
+but this time, let&apos;s get all the information we need with GraphQL.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  locations &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+    description
+    dates
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;We just got the name, description, and all the dates available for booking in
+&lt;em&gt;one single query&lt;/em&gt;. We didn&apos;t get any extra information that we didn&apos;t need,
+which is called overfetching. Overfetching incurs additional data usage, so in a
+world of mobile devices and limited data plans, GraphQL becomes really handy. On
+the flipside, when using our REST API, we needed to make multiple requests to
+get the information that we needed. This is called underfetching. When
+underfetching, one request needs to finish so we can get information from it for
+another request. This causes a large latency increase, and ultimately more time
+until the relevent information is delivered to the end user.&lt;/p&gt;
+&lt;p&gt;GraphQL also allows one to manipulate data with queries. Instead of a query,
+this kind of request is called a &lt;em&gt;mutation&lt;/em&gt;. Mutations allow clients to push or
+change data on the server. There&apos;s nothing terribly special about mutations, but
+they also enable GraphQL subscriptions. Subscriptions enable the server to push
+data to the client whenever data is modified or added. What if we needed to
+build an application that updated the information displayed as it was updated on
+the server? With a REST API, the application would need to continually check
+with the server to see if there is new or updated information. As you can
+imagine, polling the server uses large amounts of data. When using
+subscriptions, however, no polling is necessary because the server can push data
+to the client as it updates. The result is faster updates, and lower data usage.&lt;/p&gt;
+&lt;p&gt;One of the handiest parts of GraphQL is that you don&apos;t have to completely
+rewrite your frontend and backend to start using it. The magic is in things
+called &lt;em&gt;resolver functions&lt;/em&gt;. A resolver is simply a function that connects the
+query to your application or database. Put simply, resolvers get data from
+somewhere and give it to the response. Resolver functions can load data from
+databases, make web requests, or get data in any other way. In fact, you could
+use multiple different sources to resolve a single query. Since resolvers
+connect your data to the clients queries, one could migrate a REST API
+progressively to GraphQL, all the while leaving the existing API in place to
+support legacy applications.&lt;/p&gt;
+&lt;p&gt;Finally, because GraphQL is completely seperate from the front and backends,
+teams can agree on a &lt;em&gt;schema&lt;/em&gt;, then develop their parts of the application
+seperately. A schema is basically what queries can be used, and what type of
+data they return. Since the front end is completely seperate from the backend,
+there is no specific language that needs to be used on either side, enabling
+developers to work with whatever they are most comfortable with. Additionally,
+GraphQL makes it much easier for teams to transition between versions of the
+application because no change will break any functionality, as long as it still
+follows the schema.&lt;/p&gt;
+&lt;p&gt;This was by no means a comprehensive guide to GraphQL, but it should help you
+understand some of the core concepts. Additionally, you should also begin to
+understand what sets it apart from a traditional REST API. For more information
+about GraphQL, you can check out the &lt;a href=&quot;http://graphql.org/&quot;&gt;GraphQL website&lt;/a&gt;, or
+you can check out &lt;a href=&quot;www.howtographql.com&quot;&gt;How To GraphQL&lt;/a&gt;, which is an open
+source tutorial on GraphQL.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Routing traffic per-domain with a Peplink Router]]></title><description><![CDATA[There are several instances where one may want to route traffic to a specific
+domain through a certain WAN connection. One use case I…]]></description><link>josnun.github.io/posts/routing-traffic-per-domain-peplink-router</link><guid isPermaLink="false">josnun.github.io/posts/routing-traffic-per-domain-peplink-router</guid><pubDate>Wed, 31 Jan 2018 20:23:14 GMT</pubDate><content:encoded>&lt;p&gt;There are several instances where one may want to route traffic to a specific
+domain through a certain WAN connection. One use case I recently encountered is
+when your country&apos;s IP is blocked for a specific site. It&apos;s a relatively simple
+process, and can be a really powerful tool when managing a network. Here&apos;s the
+steps:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step1-5d89664d206094d1078dffc49fae88b0-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACMElEQVQ4y42S2W8SURSH+T998IGwGTVgotHEWEEoDrLJpgO0TAcofTMRgQSIS3wg4hKhVAL1QTBlbVk6iGH99c5tbSSAcZIv584993y5Z+ZIsh8/IJv9hFx+H5lMBrFXMcRjccTjcSSTSaTT6QVSKZHUEuLZaDQKyY3r13D/jhr3bt+EWq2GQXYFD+RXodbcgkajhkwmg1QqpcjlcqhUKiiVypUoFApIqtWfKB7kEeFdCPFe+J754GWfw8N64PP64fP5wbJkzyvih8PhQKFQwHA4RLfbRb/fX0DS6/VIu19hYe7C69LBarVBrzdCu7EBrVYPk8kMi8VOsNFoMBhxePgd6x7J8fEJ8vkc3HYtHHYjGMYJs9kKI7NJoo3cyA2nU8RDI8OYUC6XafF0OsV8Pl9A0ul0qNBlewj308cwbjrBPLHgkVEHi9kOl8tDpC4qE+U6nQ6lUokKZ7PZ8g2bzRaKxW8I825wAT+2tyIIcBzYLRZ+/zZ2doIIhyMIhXZp5DgelUp1vbDRaOJg/zOCAQeR+YiEQzAYAs8HiYynUXw/J3whrKwX0pZzX/DyxR7ev0tjN7JHCiNkphJk7t6SGXtDZuw1RVwnEinU6w1aLH6zFS030W6foFZrQxj8Rr11hB/VI1LUImMwQK8n4PT0FwYkJyIIQ4xG4/XCWq1G/xZJX0RgMh6T4gFFEAQiGNH2xPyfP/tP4WQyuTyw6tB57u/1fGnvUliv15eE/8O6G54BdN5xFttfarIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step1-5d89664d206094d1078dffc49fae88b0-7df03.png&quot;
+        srcset=&quot;/static/step1-5d89664d206094d1078dffc49fae88b0-c0982.png 245w,
+/static/step1-5d89664d206094d1078dffc49fae88b0-732b3.png 490w,
+/static/step1-5d89664d206094d1078dffc49fae88b0-7df03.png 980w,
+/static/step1-5d89664d206094d1078dffc49fae88b0-c2fda.png 1470w,
+/static/step1-5d89664d206094d1078dffc49fae88b0-3c743.png 1960w,
+/static/step1-5d89664d206094d1078dffc49fae88b0-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+Firstly, we&apos;ll open up the network preferences&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step2-f3516b475dbfaa92d59b866e36399fbe-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABrklEQVQ4y62Q7UtaYRiHz58aqfMENXUx6Ev/wGgs50ony/Jl+ZKrpvnBl/oWZ25Kpkc9Uw66hvuskKagXjudSHDmIuiGi4fngfu6f88t/MhlyeXyFIslJEkiFo9zcpIgkUiQTCbJnJ6SydyT0Umn0zOkUiniWq+wJIqsLC9js65gsbxkfW2Vtdc2LFYbq6+sGI2LGBYXMBgWeGEyYjKZEEWzhjiD2WxGkMotst8ldj6+we2yY9/c5L39HRsbb/F82iYUDBAO7nF44CXg28Xv30dRftLtdmm323Q6nSmE4tkZBe2rXp+fgD+A0+nE5XLhcDg4Po5Tr/+iXK5TqzXJ54uo6hXX1z3mlS68/CbxObjPrsejyZy43W62tj5wdPSVSqXGxUUJWVY4P89Sqda1ZB29eTQaMR6PpxAaV7+pVkv4vHtEIlFCoQjhcEQ7w0Sjh1rKmC6+I8aXgyh/Wq2JcCahoij0b/rcaAwGgyn6/bv3Cbf3Xo/hcKg33yaaETYajQcnPVYPyXShqqr6xH938RhzExYKhUnCeVOfUoIsy//dyZOFzWbzeYX3O3wu4V/pK6SuHYVFaAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step2-f3516b475dbfaa92d59b866e36399fbe-7df03.png&quot;
+        srcset=&quot;/static/step2-f3516b475dbfaa92d59b866e36399fbe-c0982.png 245w,
+/static/step2-f3516b475dbfaa92d59b866e36399fbe-732b3.png 490w,
+/static/step2-f3516b475dbfaa92d59b866e36399fbe-7df03.png 980w,
+/static/step2-f3516b475dbfaa92d59b866e36399fbe-c2fda.png 1470w,
+/static/step2-f3516b475dbfaa92d59b866e36399fbe-3c743.png 1960w,
+/static/step2-f3516b475dbfaa92d59b866e36399fbe-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+     Then, navigate to the outbound policy page. When
+outbound policy is set to custom, this page will list any specific
+traffic-routing rules you have set up. If it is not set to custom, go ahead and
+set it now.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step3-b6032dbb3bb54488dea3168ea2605ca8-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB5UlEQVQ4y42T62+aYBjF/f//hHlBu/jBT962ZFkMpIlSLVIH5fJyVawybHXTujZbEz17eLuaEddVkhMChB/nOechZ1gGbMuG67oYjUbodDqQJAmiKEEi9Xq9jLrdLj/LspxRek8UReTW6zUYY6jValySdA7fn8CyXBgGw81Ngji+xWyWYD6/RRzN8fTrCa8dueVySS8aqFQqyOfzqNdb0DUbijIiNwPYtgfPm8BxQjBSSB/Zbjb85d1udyQOtCwL1WoV5XIZzeYHmKaLK1WnURQOG49nCIMpfNLU8fGw3XLgfr8/Um61WnGHKaxQKKDd+ghmB+TwCy4uFDgsgE9Q1x3DIYWmgx/39wfg0cgvQEEQUCwW0Gi0cX3NoKoa+v0hBwXkLHXq+xFC5hFw+zYwzTAFtsihrtscOOirVJifdUhl/ReYzVBA84/D4VDjIx9lyLIZ/tOhaZo4O3uPUqnIM7Rt/9nhQOXtBkHEwS5pQg4fThlZKAm8lHRky/L42sjyJdwDcAyPMgzeGvnvDFOHLxnylqkUxw0PpaQOQ/vEUtK1eUeL3ai3oWkWlMEVuucyTMqTsfB5sU9Zm8VigWRxB52WWaO/IIy+0vV3xJfU8KfPiKiYyZR+u+QbkrsNYnr2+PjzVeBvdiClrRER6p8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step3-b6032dbb3bb54488dea3168ea2605ca8-7df03.png&quot;
+        srcset=&quot;/static/step3-b6032dbb3bb54488dea3168ea2605ca8-c0982.png 245w,
+/static/step3-b6032dbb3bb54488dea3168ea2605ca8-732b3.png 490w,
+/static/step3-b6032dbb3bb54488dea3168ea2605ca8-7df03.png 980w,
+/static/step3-b6032dbb3bb54488dea3168ea2605ca8-c2fda.png 1470w,
+/static/step3-b6032dbb3bb54488dea3168ea2605ca8-3c743.png 1960w,
+/static/step3-b6032dbb3bb54488dea3168ea2605ca8-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+Scroll the whole way to the bottom of the list, then add a new rule&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step4-11684fd4c4137b742984ca050bc3a3ae-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACQElEQVQ4y42T3W/SUBjG+aO98cIrE2GfJu5CnZmEgV4tG2yLEAcLFEopLaX049BSKN+gEdyyCFNvHt+eRMXocBdPzjnp6e993o8TspgF13XBbBuaVsPFxXvkcjlks1m+BioUChAEgatYLEEUxb9UKpX43ZDv+wTSkEyeIpk6Q0EQ0Wp1KIAD07Dh+330+yOuXm8Iz2lhMh7j89UV5vP5H5rNZgg5jkMRSnjy+CHpAbYij7C5sYlwOIJIeANbWzvY2dnF9vYu32fTGXQ7HQyHQwwGA76uKtRsNtFoNPAmEcOL58+wt/cUqbN3kCQZsqxSKhVKUyKVURIrsDSdgD7GkwlGoxHG5HZVHGgYBlKpU+zv7+PlqyhkRaf0+jz1bndAFz9S9A8E+QTf8dDxPEzWAQOH5+fnSMQP8frwLYRylWrIYNtNeJ5P0CG56lOKU7Sphh2vfTeQMQbTNHlBb25ucH19jcVigeVyidvlLb5++44v9G0qVTAbUJ3IebtFjZneAQyaUlUUZDIZpNNpGhGBHFuo1w2oqgbGHDjMha0bsEwbdr0Bv73GYQCUJAmxWAwHBwc4Ojqmc5XARZqrPG+Mqtah1nQKrKEuK/cDxuNxDg3mMYAUiyLyeQEKQTTqbC2AkrSqis59gIlEggNPTlIol2V6FavABgcG+3q1th7our8dRqNRHB8nfwEvL/OoVBQOUn8C5f84ZIwKzZoQ6UeRhrmmm7CaLVj09BRFhR40qGHDoLPFWjBtF363R8DxP4E/AKbDfZ2Vr5J/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 4&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step4-11684fd4c4137b742984ca050bc3a3ae-7df03.png&quot;
+        srcset=&quot;/static/step4-11684fd4c4137b742984ca050bc3a3ae-c0982.png 245w,
+/static/step4-11684fd4c4137b742984ca050bc3a3ae-732b3.png 490w,
+/static/step4-11684fd4c4137b742984ca050bc3a3ae-7df03.png 980w,
+/static/step4-11684fd4c4137b742984ca050bc3a3ae-c2fda.png 1470w,
+/static/step4-11684fd4c4137b742984ca050bc3a3ae-3c743.png 1960w,
+/static/step4-11684fd4c4137b742984ca050bc3a3ae-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+Go ahead and name the rule something recognizable so you will know what it is for in the future. To filter by domain, Adjust the &quot;Destination&quot; section accordingly, then enter your domain name. Wildcards are also supported. for more information, click the &lt;code class=&quot;language-text&quot;&gt;?&lt;/code&gt; button. Choose an appropriate algorithm for routing your traffic. Typically, enforced will be the most applicable, but &lt;a href=&quot;https://www.peplink.com/technology/load-balancing-algorithms/&quot;&gt;other options&lt;/a&gt; are available.&lt;/p&gt;
+&lt;p&gt;When you are finished with the configuration, save your changes.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step5-ba37537263e1e257ca502a6434b8d199-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACT0lEQVQ4y32SW08aURSF+av6AuWWpsYXfwmp3DIz1iYqhRlAlPiiIFgYAZn7hYEZlIcmjSj2TVf3HPtQ28gkK/vMyZxv1l77RHr9KwwGA9IQnU4HoiShVquTaqjX6zg+Pkaz2cTZ2Rmrp6enTOH6b4V7Ep2NJBMfkEolkUzEkUwmsbP9Eduf0rROIZ1OY3NzExsbG0zxeBxbW1tI0HexaBSxWOyNorQXCXwf13IX+0IGX78I2BP2IPACOE4AT7VYKDIVCgV65yFwPCbeFKvVCvf391gul28UkccODF2BKJbQOKmjXDmCVC1TLeOwJOHwm4SDI5FVTtjHQamKHz+XeO+J9IY6tMYFqhUVjaaPiniN1qWDi7aHzvdbXF4FOGmqtDfFeXuKgRyQsxU7/Pz8gpeXt4pMph4mFy3sF3hkcxw5bUBTXciygqvuADcjg4Ylw7F96IYHX3fw6/EVGAL+c+jOfDjtFvbyOeRIkliFYbjo94fodvsYjVS0W13YtoexYsBTDTw9Pr4PnC8WsGncfCaD3XyegLV/gBpVGZblQdVsuKqJ1cMaoD+fwzw/B5fN4nN2F2KlyiDjsQGNAKpqYThUYZoug7q6vR6oaRo022ZXJJfLUYY1Bgxhs9ktgSZ06RUo9APbmWGqWXhaB7Qsi66NDp7jkKeWK+QwdKdT+J43Z9kplJ1FYMcN4BsOZbhmKHd3C2pLRbFYRJZalqQ6y1CWb9DrDZjDEBoCTWp5wjJ8eB8YBAEDhu6yfzJUFJNgr0Nhubk+Qaes5Qk5XJfhbzsYd4DO2WbbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 5&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step5-ba37537263e1e257ca502a6434b8d199-7df03.png&quot;
+        srcset=&quot;/static/step5-ba37537263e1e257ca502a6434b8d199-c0982.png 245w,
+/static/step5-ba37537263e1e257ca502a6434b8d199-732b3.png 490w,
+/static/step5-ba37537263e1e257ca502a6434b8d199-7df03.png 980w,
+/static/step5-ba37537263e1e257ca502a6434b8d199-c2fda.png 1470w,
+/static/step5-ba37537263e1e257ca502a6434b8d199-3c743.png 1960w,
+/static/step5-ba37537263e1e257ca502a6434b8d199-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step6-deca79025972422c894aa64eb89e07cc-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACYElEQVQ4y32T7U/aUBTG+Vf1i0yRLDN+2V+iDkFo0WVRoYVChLi4JU6oRSilpa+0UCVZliy86T7Js9Prl5lFmjw5t7c9v3tOn9PYrdJEu91murm5gVgqQZIqJAmVSgXVahX1eh2Xl5cs1mo1pmj9r6K9EuXGElvvsL2dQBQTiQQ+7r7H7ockrbeRTCaxvr6OtbU1ps3NTezs7GCL3otvbCAej7/SBu3FwtEId60GTrg9nBzzyPN58ByPXI4Hx3E4yhwxZUhcjgNPGvgBFosFJpMJptPpK8VamgPT1CGKZ7i4kFAUzlEuF1EoFnFaKOOsUMKXMwGn5yXk+M9s79fvKd66YkrXhm70KVFAUSxDqtbQ7VmQFRUNWcVdp4+r7030DA9yS4NJcTZbsOTn52csl8tXivkDF47jgOd5HOwfQBQkGIaL9p2GZqOFbtdgceCN6GAHoeXiz+IFGAH+q9DzBrAsE/l8FoeH+8wp2/bIdRXNpgJN08l9GZ4XoKf3MTRtPM1XAB8e7gk4wvHxFZnwFULxB8GGkGWPgC5arQDX1yZUNURHfYClBphPVwDDcETAgIB1ZLNVFArfIDctggbo938ykHLrotMJoPXGsLQh5rMVQF03WMscl0EqtUdui9SmQTALw2FI7UewLgzdhOP6GFkOHufzt4GWZVOSTUAe6XQaglAmoElAF75/T898MqZPhw4IOCRTPDytMmU8HtMcmtRulipMoSRKdO8xlxWl8wJyAjgEtkiBYeNxNl/1DUMGjP6EVOoTtSyhR3MYwRo0LlGFHo2M6wawCexThYsVLv8FPPh5S1aXWd8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;step6&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step6-deca79025972422c894aa64eb89e07cc-7df03.png&quot;
+        srcset=&quot;/static/step6-deca79025972422c894aa64eb89e07cc-c0982.png 245w,
+/static/step6-deca79025972422c894aa64eb89e07cc-732b3.png 490w,
+/static/step6-deca79025972422c894aa64eb89e07cc-7df03.png 980w,
+/static/step6-deca79025972422c894aa64eb89e07cc-c2fda.png 1470w,
+/static/step6-deca79025972422c894aa64eb89e07cc-3c743.png 1960w,
+/static/step6-deca79025972422c894aa64eb89e07cc-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+Your now rule will be placed at the top of the list. The filters will be applied from the top down, so if you want other rules to be higher-priority (for VoIP maybe?), drag your new rule down below them.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/step7-66667689ee709b42f0e7a3b7192985b7-99e46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 980px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACV0lEQVQ4y42Sy08aURjF+U9VrJFWJE0TF3XTP6NaEAcBTRuoPGSMIjHpQkCG5zDDvHmGLrooj8Gu5PS7t91YW9JJTjJ3Mvd3zznf9VSkMur1OqmBYrGITDaLXE4k5SCKIi4vL5HP51EoFHB7c8NVoHX+D11fXyNLez3+nZfY3fXDv/MKfr8f+3uvsfcmQO+7CAQC8Hq92PBu4MX6OvbX1vBuawtvNzfh8/meaXt7G57hYIBatYSz2AHOTmOIx+KIRWM4OYkhGo1COBa4jkmRYAjC+wPYhgl34WIymWA6nT6Rpyqb0DQFmUwSV1c5pNJJXFykcJ5KIXGeRZL0KZFG4nMGJ/GPSKRFfPs+w78ej9QyICsqbSBImvoTr9Bqa7iXmijeN1FtqLj9UkJbtVGWZGiqhdlszjc/Pj5iuVw+kafr2NB1ncf7cHhITnPoqCbqNRnlkgS5paJcrsKxB1Dp+0i38MN1OZABnjm0HYcia4jHT6mnME1KpAMc1GotlEpVtFod3N1VYFt9yG0d/Y6Jh/kK4Hg8hqIoBDtGMBhEOn1BawONRpu7lOUOKpU6d6eQHNWA+zvyX4HD4ZB+ViEIAgemUlm6k22C6rApZqdjodlU+Fo3unA0C+58BZDBWGR2VcJHR8iQQxaTOer1RhTfpgNkKBTXMHvoE3CxKrJhGBzIhhIOh3lkWda4s253BINcsQNYryb1ODRsPLgrO/zKI0ciEYRCIWRpyppm8/4kqfELRM5MArPIPepw8T8dsqEwILs2bYrHYGzKzCHr0rJ6PHKXKnBXRP4JRqt4V1sm5CwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Step 7&quot;
+        title=&quot;&quot;
+        src=&quot;/static/step7-66667689ee709b42f0e7a3b7192985b7-7df03.png&quot;
+        srcset=&quot;/static/step7-66667689ee709b42f0e7a3b7192985b7-c0982.png 245w,
+/static/step7-66667689ee709b42f0e7a3b7192985b7-732b3.png 490w,
+/static/step7-66667689ee709b42f0e7a3b7192985b7-7df03.png 980w,
+/static/step7-66667689ee709b42f0e7a3b7192985b7-c2fda.png 1470w,
+/static/step7-66667689ee709b42f0e7a3b7192985b7-3c743.png 1960w,
+/static/step7-66667689ee709b42f0e7a3b7192985b7-99e46.png 2880w&quot;
+        sizes=&quot;(max-width: 980px) 100vw, 980px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+Now, click the apply changes button to finalize your changes. The traffic to your specified domain should now be using the algorithm you configured. Go ahead and and give it a test!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[So you want to learn programming (and other things), eh?]]></title><description><![CDATA[I was wondering recently, if I could tell my younger self anything, what would
+that be? As you can guess, the list was quite large, but that…]]></description><link>josnun.github.io/posts/so-you-want-to-learn-programming</link><guid isPermaLink="false">josnun.github.io/posts/so-you-want-to-learn-programming</guid><pubDate>Thu, 14 Dec 2017 20:23:14 GMT</pubDate><content:encoded>&lt;p&gt;I was wondering recently, if I could tell my younger self anything, what would
+that be? As you can guess, the list was quite large, but that got me
+thinking... As far as programming, what would I tell myself? And that, my
+friend, is what I have here, in no particular order.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Learn the right language and stick with it. If you want to do some extremely
+awesome mathy or sciency thing, or make games? I would suggest Python. I don&apos;t
+have much experience with it, but I know it is incredibly beginner friendly,
+and there are a lot of recources out there to help. Do you want to do
+something that does something cool or just &lt;em&gt;looks&lt;/em&gt; awesome? Go with web
+development.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&quot;But Josiah, web development isn&apos;t a language!&quot; Yeah, I know. But the stuff
+you use for web development can be used in &lt;em&gt;so&lt;/em&gt; many more places. Plus, what
+person interested in technology doesn&apos;t need to make a website at some point
+or another? Yeah, there are some pretty decent WYSIWYG editors, but it&apos;s often
+easier to just do it with code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Learn to type.&lt;/em&gt; This one might seem insignificant, but trust me, you&apos;ll wish
+you had. I was one of those who had typing in school, but, as soon as it was
+over, did one of those &quot;brain dumps&quot; where you get rid of all that
+&quot;non-important information.&quot; Trust me. Learning to type is going to be a huge
+advantage. Don&apos;t go the path I did and have to reteach yourself to do things
+right. It&apos;s a pain. A great resource for this one is
+&lt;a href=&quot;https://www.typing.com/&quot;&gt;typing.com&lt;/a&gt;. Go do yourself a favor and learn typing
+right.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Figure out the basics. This applies to just about anything, but I&apos;m gonna talk
+particularly about web development. Yeah, Javascript is cool and all, but
+don&apos;t just dive into the &quot;cool&quot; stuff. It builds on all that boring stuff.
+HTML and CSS are great to learn, and they are relatively simple as well, so
+get to it! They may not seem that important now, but they&apos;ll save you a ton in
+the future. Also (this applies to a bunch of things), Make sure you are
+understanding what you are learning before you move on. I have wasted many
+hours relearning stuff because I skimped on learning the basics.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Don&apos;t assume anything isn&apos;t worth learning. Approach everything like learning
+it is worthwhile. There are &lt;em&gt;plenty&lt;/em&gt; of instances where I look back and wish I
+had actually learned something instead of just &quot;learning&quot; enough to pass a
+test. There are also those things that you &lt;em&gt;had&lt;/em&gt; to study (parents made you?).
+Do yourself a favor and be willing to learn at every opportunity, even if you will probably never use it (&lt;strong&gt;Spoiler Alert&lt;/strong&gt;: At some point, you&apos;ll probably need to use it.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Maybe this should fall under the last one as well. When you are studying
+something, don&apos;t study it to use it, rather, study it to learn it. &lt;em&gt;All&lt;/em&gt; the
+time, I have a specific issue or forget the syntax for something (&lt;em&gt;cough&lt;/em&gt;
+switch statement &lt;em&gt;cough&lt;/em&gt;), then, google, copy, paste, run, and done.
+Sometimes, you actually &lt;em&gt;type&lt;/em&gt; in the code (or text), but didn&apos;t take the time
+to figure out how a piece of code works or why it works the way it does. Let
+me tell you, take the 15 minutes to study what you need, and you&apos;ll save
+yourself &lt;em&gt;hours&lt;/em&gt; in the future (and also you won&apos;t be kicking yourself for
+forgetting that same thing for the 10th time).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Learn to ask questions. The only stupid question is the one you didn&apos;t ask. I
+know it can make you feel dumb, but its worth it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Programming is &lt;em&gt;hard&lt;/em&gt;. It isn&apos;t always fun and exciting. There will come a
+time where that one bug is really getting on your nerves or those objects just
+don&apos;t make sense. There isn&apos;t much I can tell you here, except stick with it.
+There will be those times when you are excited to build something sometime,
+but if you don&apos;t struggle through the hard stuff now, you are never going to
+get to the fun stuff.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find your passion. Make something you are excited about. If a project excites
+you, you&apos;ll be able to work on it much longer without getting tired. Also, it
+will be much easier to focus and avoid distractions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those are just a few things I have learned that will save you a bunch of time
+and effort. Quite a few of those principles are universal, so don&apos;t just try to
+apply them to programming. There&apos;s quite a few of them that I still mess up on.
+But stick with it, and it&apos;ll pay off.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Managing dotfiles and ZSH with dotbot and antigen]]></title><description><![CDATA[I'm gonna be honest here, quite often I would get frustrated with dotfiles. A large part of that frustration was because I never took the…]]></description><link>josnun.github.io/posts/managing-dotfiles-and-zsh-with-dotbot-and-antigen</link><guid isPermaLink="false">josnun.github.io/posts/managing-dotfiles-and-zsh-with-dotbot-and-antigen</guid><pubDate>Mon, 06 Nov 2017 20:23:14 GMT</pubDate><content:encoded>&lt;p&gt;I&apos;m gonna be honest here, quite often I would get frustrated with dotfiles. A large part of that frustration was because I never took the time to properly set up my dotfiles, so any time that I would add a new file or make a change, I would have to manually relink files, or put them in the proper place. I finally had enough, so I did some research into the &quot;proper&quot; method of organizing and keeping track of them. What I found was &lt;a href=&quot;https://git.io/dotbot&quot;&gt;Dotbot&lt;/a&gt; for general dotfiles and &lt;a href=&quot;http://antigen.sharats.me/&quot;&gt;Antigen&lt;/a&gt; for managing my ZSH installation.&lt;/p&gt;
+&lt;p&gt;I also set up a Github &lt;a href=&quot;https://github.com/fracturedloop/dotfiles&quot;&gt;repository&lt;/a&gt; for my dotfiles. This enables me to easily backup my configuration. Additionally, it makes setup on a new machine &lt;em&gt;incredibly&lt;/em&gt; simple; just two commands and I have my custom-tailored terminal and dotfiles.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/FracturedLoop/dotfiles.git &lt;span class=&quot;token comment&quot;&gt;# Clone the repo&lt;/span&gt;
+dotfiles/./install &lt;span class=&quot;token comment&quot;&gt;# Run the install script&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;So... How do you get started making your own configuration? Firstly, make a folder to store your dotfiles. I would suggest making it in your home (&lt;code class=&quot;language-text&quot;&gt;~&lt;/code&gt;) directory, and naming it &lt;code class=&quot;language-text&quot;&gt;dotfiles&lt;/code&gt;. You could also hide the directory if you want by prepending the name with a period (eg. &lt;code class=&quot;language-text&quot;&gt;.dotfiles&lt;/code&gt;). Then, go ahead and set it up as a git repository (&lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt;), and set it up on Github if you want. Next, we&apos;ll set up Dotbot. Dotbot is useful even if you don&apos;t use ZSH. It works with any dotfiles or configuration files/directories. To use Dotbot, we are going to set it up as a submodule to our dotfiles repository.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; dotfiles &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; dotfiles &lt;span class=&quot;token comment&quot;&gt;# Make a dotfiles folder and change into it&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; submodule add https://github.com/anishathalye/dotbot &lt;span class=&quot;token comment&quot;&gt;# Add the Dotbot repo as a submodule&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; dotbot/tools/git-submodule/install &lt;span class=&quot;token keyword&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Copy the install script to the main dotfiles folder&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;touch&lt;/span&gt; install.conf.yaml &lt;span class=&quot;token comment&quot;&gt;# create a config file for Dotbot&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Boring part: done. Now on the the fun part of setting up your own dotfiles. Go ahead and move your current dotfiles into the dotfiles directory. If you want, you can set up subdirectories to group them based on purpose. I, for example, have a folder set up for shell configurations, as well as one set up for linters. Next, open &lt;code class=&quot;language-text&quot;&gt;install.conf.yaml&lt;/code&gt; in a text editor. This is where your configuration for dotbot will be. Here&apos;s my config file. We&apos;ll look at the important aspects of it a bit later.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# install.conf.yaml&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;relink&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;~&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Shell stuff&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.aliases&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; shell/.aliases
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.functions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; shell/.functions
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.zshrc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; shell/.zshrc
+    &lt;span class=&quot;token comment&quot;&gt;# Linters&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.eslintrc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linters/.eslintrc
+    &lt;span class=&quot;token comment&quot;&gt;# Git&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.gitconfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; git/.gitconfig
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.gitignore&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; git/.gitignore
+    &lt;span class=&quot;token comment&quot;&gt;# Apps&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.hammerspoon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; applications/.hammerspoon
+    &lt;span class=&quot;token key atrule&quot;&gt;~/.zazurc.json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; applications/.zazurc.json
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;git submodule update &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;init &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;recursive&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Installing submodules&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;clean&lt;/code&gt; section is relatively self explanitory. It will check an array of directories for dead or broken links, and remove them. Here, I have it cleaning out my home folder.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;link&lt;/code&gt; section is where most of the good stuff happens. To setup a link, specify where the symbolic link itself should go, followed by where it should link to. If you want, you could link folders in addition to files.&lt;/p&gt;
+&lt;p&gt;The next section that is useful for configuration is the &lt;code class=&quot;language-text&quot;&gt;shell&lt;/code&gt; section. You can pass the shell section a list of commands to run on install. Optionally, you can pass in an array with the command, as well as a short description that will be displayed as the command is run while executing the install command. In my config, I have it installing/updating submodules. At some point in the future, I may also add another file of terminal commands to run to configure certain parts of my OS.&lt;/p&gt;
+&lt;p&gt;Finally is the &lt;code class=&quot;language-text&quot;&gt;defaults&lt;/code&gt; section. This lets you set default options for other commands. More info about the defaults, as well as additional options for the other commands can be found in the &lt;a href=&quot;https://github.com/anishathalye/dotbot/blob/master/README.md&quot;&gt;Dotbot readme&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now that your Dotbot config is complete, let&apos;s go ahead and run it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[dotfiles] ./install
+All targets have been cleaned
+Link exists ~/.hammerspoon -&amp;gt; /Users/josiah/dotfiles/applications/.hammerspoon
+Link exists ~/.functions -&amp;gt; /Users/josiah/dotfiles/shell/.functions
+Link exists ~/.gitconfig -&amp;gt; /Users/josiah/dotfiles/git/.gitconfig
+Link exists ~/.zazurc.json -&amp;gt; /Users/josiah/dotfiles/applications/.zazurc.json
+Link exists ~/.gitignore -&amp;gt; /Users/josiah/dotfiles/git/.gitignore
+Link exists ~/.zshrc -&amp;gt; /Users/josiah/dotfiles/shell/.zshrc
+Link exists ~/.eslintrc -&amp;gt; /Users/josiah/dotfiles/linters/.eslintrc
+Link exists ~/.aliases -&amp;gt; /Users/josiah/dotfiles/shell/.aliases
+All links have been set up
+Installing submodules [git submodule update --init --recursive]
+All commands have been executed
+
+==&amp;gt; All tasks executed successfully
+[dotfiles]&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;As you can see, Dotbot is relatively verbose in letting you know what&apos;s going on. Oh, and that &quot;&lt;code class=&quot;language-text&quot;&gt;==&amp;gt; All tasks executed successfully&lt;/code&gt;&quot; line at the bottom? That means everything worked, and you are good to go with your dotfiles! If you get an error message instead, I would suggest checking out the &lt;a href=&quot;https://github.com/anishathalye/dotbot&quot;&gt;Dotbot repo&lt;/a&gt; and getting your issues fixed before moving on to the next part.&lt;/p&gt;
+&lt;p&gt;And now begins part 2... Configuring ZSH with Antigen. If you don&apos;t use ZSH as your shell (which you should), this doesn&apos;t apply to you. If you are one of those people though, I would definitely suggest checking out &lt;a href=&quot;http://ohmyz.sh/&quot;&gt;Oh My ZSH&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And now for &lt;a href=&quot;http://antigen.sharats.me/&quot;&gt;Antigen&lt;/a&gt;. Antigen makes managing your ZSH configuration simple. Let&apos;s look at my config to see how it works.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# .zshrc&lt;/span&gt;
+ZSH_BASE&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$HOME&lt;/span&gt;/dotfiles &lt;span class=&quot;token comment&quot;&gt;# Base directory for ZSH configuration&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$ZSH_BASE&lt;/span&gt;/antigen/antigen.zsh &lt;span class=&quot;token comment&quot;&gt;# Load Antigen&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; ~/.aliases &lt;span class=&quot;token comment&quot;&gt;# Source some extra files&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; ~/.functions
+
+antigen use oh-my-zsh &lt;span class=&quot;token comment&quot;&gt;# Yes, I want to use Oh My ZSH&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Terminal stuff&lt;/span&gt;
+antigen bundle &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt;
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle z
+
+&lt;span class=&quot;token comment&quot;&gt;# Node stuff&lt;/span&gt;
+antigen bundle node
+antigen bundle &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Do OS dependant stuff&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+  Darwin&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Commands for OS X go here&lt;/span&gt;
+    antigen bundle osx
+  &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  Linux&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Commands for Linux go here&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+esac
+
+&lt;span class=&quot;token comment&quot;&gt;# Set the theme&lt;/span&gt;
+antigen theme theunraveler
+
+&lt;span class=&quot;token comment&quot;&gt;# And lastly, apply the Antigen stuff&lt;/span&gt;
+antigen apply&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;That works and is pretty and everything but what does it do? Well... Let&apos;s give it a look.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ZSH_BASE&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$HOME&lt;/span&gt;/dotfiles &lt;span class=&quot;token comment&quot;&gt;# Base directory for ZSH configuration&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$ZSH_BASE&lt;/span&gt;/antigen/antigen.zsh &lt;span class=&quot;token comment&quot;&gt;# Load Antigen&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; ~/.aliases &lt;span class=&quot;token comment&quot;&gt;# Source some extra files&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; ~/.functions&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;This section just does some basic setup. If you are using a different directory for your dotfiles, changing &lt;code class=&quot;language-text&quot;&gt;ZSH_BASE&lt;/code&gt; will let everything know where to look for stuff. Then comes the important step of sourcing Antigen. I also sourced some other files that I use for my shell configuration.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;antigen use oh-my-zsh &lt;span class=&quot;token comment&quot;&gt;# Yes, I want to use Oh My ZSH&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Terminal stuff&lt;/span&gt;
+antigen bundle &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt;
+antigen bundle zsh-users/zsh-syntax-highlighting
+&lt;span class=&quot;token comment&quot;&gt;#...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;antigen use&lt;/code&gt; command lets you load a prepackaged library, and in this case, I&apos;m loading &lt;a href=&quot;http://ohmyz.sh/&quot;&gt;Oh My ZSH&lt;/a&gt;. Oh My ZSH has a bunch of plugins and tweaks that makes ZSH really nice to use, so I would definitely suggest including it. It also includes quite a few &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/themes&quot;&gt;themes&lt;/a&gt; as well. The &lt;code class=&quot;language-text&quot;&gt;bundle&lt;/code&gt; command tells Antigen which plugins to load. Oh My ZSH comes with plenty of &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins&quot;&gt;plugins&lt;/a&gt; ready for you to include, but Antigen also supports loading plugins from Gtihub repositories as well, as you can see with the &lt;a href=&quot;https://github.com/zsh-users/zsh-syntax-highlighting&quot;&gt;zsh-syntax-highlighting&lt;/a&gt; plugin. The only issue I had, was sometimes you only want a plugin to be included on certain operating systems. This is where the next section comes in.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Do OS dependant stuff&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+  Darwin&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Commands for OS X go here&lt;/span&gt;
+    antigen bundle osx
+  &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  Linux&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Commands for Linux go here&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+esac&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;uname&lt;/code&gt; command is used to figure out which OS is running, then the switch case includes the proper bundles for that system. Certainly useful, because for some reason, the macOS specific commands weren&apos;t running on my linux install. Can&apos;t imagine why... ¯\_(ツ)_/¯&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;antigen theme&lt;/code&gt; command is used to set which theme is being used for ZSH. Antigen includes all the themes from Oh My ZSH automatically, but if you want to use another one, it can also load other themes as well, just like the &lt;code class=&quot;language-text&quot;&gt;bundle&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Finally, to actually get the plugins and load them into ZSH, you run &lt;code class=&quot;language-text&quot;&gt;antigen apply&lt;/code&gt;. This will fetch any bundles that are not already on your system as well.&lt;/p&gt;
+&lt;p&gt;Now, when you open your terminal, you should see your custom plugins and theme are applied and working. For further configuration, be sure to check out the &lt;a href=&quot;http://antigen.sharats.me/&quot;&gt;Antigen&lt;/a&gt; website. While you are at it, you may also want to do a bit further reading on &lt;a href=&quot;https://github.com/anishathalye/dotbot&quot;&gt;Dotbot&lt;/a&gt; so you can tweak it and make it work better for you. Lastly, don&apos;t forget to push your dotfiles to Github so you have a backup, just in case. While you are there, you may also want to star the Dotbot and Antigen repositories to show your appreciation for their authors&apos; hard work.&lt;/p&gt;</content:encoded></item></channel></rss>
