@@ -40,6 +40,11 @@ const TemplateWrapper = ({ children }) => (
         content="iTqQGhz5A11iZYYP6fr9lS1lpnduASXddf5sr9tUN78"
       />
       <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css?family=Raleway:400,600,800"
+        as="style"
+      />
     </Helmet>
     <Header />
     <Navbar />
