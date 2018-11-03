@@ -4,21 +4,25 @@
       "component---src-pages-about-person-jsx-300e993648d3a0fda2a2.js",
       "component---src-pages-about-person-jsx-300e993648d3a0fda2a2.js.map"
     ],
+    "path---posts-faster-font-loading-less-flash": [
+      "path---posts-faster-font-loading-less-flash-d305af38d93767db883f.js",
+      "path---posts-faster-font-loading-less-flash-d305af38d93767db883f.js.map"
+    ],
     "path---tags-mixin": [
-      "path---tags-mixin-193b87d7dea6190128c3.js",
-      "path---tags-mixin-193b87d7dea6190128c3.js.map"
+      "path---tags-mixin-1c5142cffb0225eb7255.js",
+      "path---tags-mixin-1c5142cffb0225eb7255.js.map"
     ],
     "component---src-pages-projects-jsx": [
       "component---src-pages-projects-jsx-bba465f7542a279f322d.js",
       "component---src-pages-projects-jsx-bba465f7542a279f322d.js.map"
     ],
     "path---tags-programming": [
-      "path---tags-programming-2ad5acd11d6dbab60062.js",
-      "path---tags-programming-2ad5acd11d6dbab60062.js.map"
+      "path---tags-programming-46877302588b6388f858.js",
+      "path---tags-programming-46877302588b6388f858.js.map"
     ],
     "path---tags-animation": [
-      "path---tags-animation-5ed46322936f66c6683e.js",
-      "path---tags-animation-5ed46322936f66c6683e.js.map"
+      "path---tags-animation-1a2dca174ebc5342eea4.js",
+      "path---tags-animation-1a2dca174ebc5342eea4.js.map"
     ],
     "component---src-pages-tags-jsx": [
       "component---src-pages-tags-jsx-f1f0c1cdc4580bd34dc2.js",
@@ -29,24 +33,24 @@
       "path---about-developer-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---tags-learning": [
-      "path---tags-learning-ac6c2e45ebd9093e88a9.js",
-      "path---tags-learning-ac6c2e45ebd9093e88a9.js.map"
+      "path---tags-learning-61905a1f3a24818e05a9.js",
+      "path---tags-learning-61905a1f3a24818e05a9.js.map"
     ],
     "path---about-person": [
       "path---about-person-a0e39f21c11f6a62c5ab.js",
       "path---about-person-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---tags-config": [
-      "path---tags-config-8f4f2d561bc2e9f7c061.js",
-      "path---tags-config-8f4f2d561bc2e9f7c061.js.map"
+      "path---tags-config-e42c737efbec70ddfce7.js",
+      "path---tags-config-e42c737efbec70ddfce7.js.map"
     ],
     "path---tags-graphql": [
-      "path---tags-graphql-b523bdc435bb18d504c4.js",
-      "path---tags-graphql-b523bdc435bb18d504c4.js.map"
+      "path---tags-graphql-12e240d47184ce02403c.js",
+      "path---tags-graphql-12e240d47184ce02403c.js.map"
     ],
     "path---tags": [
-      "path---tags-bc11b7911044366022eb.js",
-      "path---tags-bc11b7911044366022eb.js.map"
+      "path---tags-894a2bc9a45f0422bbe3.js",
+      "path---tags-894a2bc9a45f0422bbe3.js.map"
     ],
     "component---src-pages-contact-jsx": [
       "component---src-pages-contact-jsx-4dbbbd1432659c556a9b.js",
@@ -61,24 +65,28 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---tags-networking": [
-      "path---tags-networking-22948c5e5caead8c6b04.js",
-      "path---tags-networking-22948c5e5caead8c6b04.js.map"
+      "path---tags-networking-910fc08eadcdc54c799f.js",
+      "path---tags-networking-910fc08eadcdc54c799f.js.map"
     ],
     "component---src-layouts-index-jsx": [
-      "component---src-layouts-index-jsx-1cfae778ca1af3382850.js",
-      "component---src-layouts-index-jsx-1cfae778ca1af3382850.js.map"
+      "component---src-layouts-index-jsx-5ee4a27441e1e37b858c.js",
+      "component---src-layouts-index-jsx-5ee4a27441e1e37b858c.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-75e3ab1219a1de58deba.js",
-      "path---tags-react-75e3ab1219a1de58deba.js.map"
+      "path---tags-react-05376cfdf46e853014a1.js",
+      "path---tags-react-05376cfdf46e853014a1.js.map"
     ],
     "path---tags-performance": [
-      "path---tags-performance-5703cb8d12dbd807c5fa.js",
-      "path---tags-performance-5703cb8d12dbd807c5fa.js.map"
+      "path---tags-performance-e4144adfd52d12958404.js",
+      "path---tags-performance-e4144adfd52d12958404.js.map"
     ],
     "path---tags-optimization": [
-      "path---tags-optimization-09e8af7c51305d0031f5.js",
-      "path---tags-optimization-09e8af7c51305d0031f5.js.map"
+      "path---tags-optimization-d9b4eba83c8247d7651a.js",
+      "path---tags-optimization-d9b4eba83c8247d7651a.js.map"
+    ],
+    "path---tags-quick-tip": [
+      "path---tags-quick-tip-9f9706d56d073f59ef32.js",
+      "path---tags-quick-tip-9f9706d56d073f59ef32.js.map"
     ],
     "path---projects": [
       "path---projects-a0e39f21c11f6a62c5ab.js",
@@ -97,8 +105,8 @@
       "path---posts-so-you-want-to-learn-programming-df5d88bc4c6fb3b5780c.js.map"
     ],
     "path---index": [
-      "path---index-14044574c7a9d782bb78.js",
-      "path---index-14044574c7a9d782bb78.js.map"
+      "path---index-307d21343ea0675765c5.js",
+      "path---index-307d21343ea0675765c5.js.map"
     ],
     "path---posts-graphql-why": [
       "path---posts-graphql-why-2cb4807c0c4b3fe8af9a.js",
@@ -133,8 +141,8 @@
       "component---src-pages-about-developer-jsx-dd86bdc11d23eb5654cb.js.map"
     ],
     "path---tags-career": [
-      "path---tags-career-d4f015b44798e5eeb433.js",
-      "path---tags-career-d4f015b44798e5eeb433.js.map"
+      "path---tags-career-2fb3bc3d3f16d7dc5ad5.js",
+      "path---tags-career-2fb3bc3d3f16d7dc5ad5.js.map"
     ],
     "component---src-templates-blog-post-jsx": [
       "component---src-templates-blog-post-jsx-e506879f80718f3fa73e.js",
@@ -145,12 +153,12 @@
       "path---posts-managing-dotfiles-and-zsh-with-dotbot-and-antigen-755c374092efde706e9e.js.map"
     ],
     "path---tags-tutorial": [
-      "path---tags-tutorial-403007c8698f71dfa10d.js",
-      "path---tags-tutorial-403007c8698f71dfa10d.js.map"
+      "path---tags-tutorial-c82cf78fc5133f69d42f.js",
+      "path---tags-tutorial-c82cf78fc5133f69d42f.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-7efe609ce7568c7f5799.js",
-      "path---tags-css-7efe609ce7568c7f5799.js.map"
+      "path---tags-css-f21c70140dcc8e4115c6.js",
+      "path---tags-css-f21c70140dcc8e4115c6.js.map"
     ],
     "path---posts-performant-css-underline-animations": [
       "path---posts-performant-css-underline-animations-70cbfeeffa4cf0e0ce8d.js",
@@ -169,26 +177,26 @@
       "path---posts-fixing-mobile-hover-effects-6dfc602bd2612e3b081b.js.map"
     ],
     "path---tags-life": [
-      "path---tags-life-d8b6ac536e28bfa4f27f.js",
-      "path---tags-life-d8b6ac536e28bfa4f27f.js.map"
+      "path---tags-life-897a5c1c77612398dadd.js",
+      "path---tags-life-897a5c1c77612398dadd.js.map"
     ],
     "app": [
-      "app-4a393da00507de1c644f.js",
+      "app-96fa125400b194f65d69.js",
       "build-js-styles.css",
-      "app-4a393da00507de1c644f.js.map",
+      "app-96fa125400b194f65d69.js.map",
       "build-js-styles.css.map"
     ],
     "path---tags-sass": [
-      "path---tags-sass-dac45fa5e2d279a741e1.js",
-      "path---tags-sass-dac45fa5e2d279a741e1.js.map"
+      "path---tags-sass-833bff6936c47b899e6b.js",
+      "path---tags-sass-833bff6936c47b899e6b.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---tags-computer-setup": [
-      "path---tags-computer-setup-85764e6f4af761ec7260.js",
-      "path---tags-computer-setup-85764e6f4af761ec7260.js.map"
+      "path---tags-computer-setup-9b587c8caecfd6e069ef.js",
+      "path---tags-computer-setup-9b587c8caecfd6e069ef.js.map"
     ]
   }
 }
