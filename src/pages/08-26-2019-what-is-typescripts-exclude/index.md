@@ -1,5 +1,5 @@
 ---
-title: 'What is TypeScript's Exclude?'
+title: "What is TypeScript's Exclude?"
 path: '/posts/what-is-typescripts-exclude'
 date: '2019-08-26T21:34:18Z'
 tags:
