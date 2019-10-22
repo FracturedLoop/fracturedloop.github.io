@@ -21,7 +21,7 @@ const arr: StringArray = {
   2: 'two',
   [Math.PI]: Math.PI,
   // This isn't valid
-  'three': 'three
+  'three': 'three'
 };
 ```
 
