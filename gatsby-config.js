@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Josiah's Site`,
     description: 'The website, blog, and portfolio for Josiah Nunemaker',
-    siteUrl: 'josnun.github.io',
+    siteUrl: 'https://josnun.com',
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -114,5 +114,6 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 };
